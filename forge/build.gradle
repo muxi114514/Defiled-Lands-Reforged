@@ -9,21 +9,21 @@ architectury {
 
 loom {
     forge {
-        mixinConfig "template-mod.mixins.json"
+        mixinConfig "defiledlands.mixins.json"
     }
     runs {
         client {
             client()
             name "Forge Client"
             runDir "run/client"
-            vmArgs "-Dneoforge.enabledGameTestNamespace=template-mod"
+            vmArgs "-Dneoforge.enabledGameTestNamespace=defiledlands"
             programArgs "--username", "Player1"
         }
         server {
             server()
             name "Forge Server"
             runDir "run/server"
-            vmArgs "-Dneoforge.enabledGameTestNamespace=template-mod"
+            vmArgs "-Dneoforge.enabledGameTestNamespace=defiledlands"
         }
     }
 }
@@ -65,12 +65,12 @@ jar {
 	
 	manifest {
 		attributes([
-			'Specification-Title'     : 'Template Mod',
-			'Specification-Vendor'    : 'Template Author',
+			'Specification-Title'     : 'Defiled Lands',
+			'Specification-Vendor'    : 'Lykrast',
 			'Specification-Version'   : '1',
 			'Implementation-Title'    : project.name,
 			'Implementation-Version'  : project.version,
-			'Implementation-Vendor'   : 'Template Author'
+			'Implementation-Vendor'   : 'Lykrast'
 		])
 	}
 }
@@ -93,6 +93,10 @@ repositories {
         url "https://cursemaven.com"
         name "CurseMaven"
     }
+    maven {
+        url "https://maven.blamejared.com"
+        name "BlameJared (JEI)"
+    }
 }
 
 tasks.named('processResources', ProcessResources).configure {
@@ -102,11 +106,11 @@ tasks.named('processResources', ProcessResources).configure {
         forge_version: project.forge_version,
         forge_version_range: '[47,48)',
         loader_version_range: '[47,)',
-        mod_id: 'template-mod',
-        mod_name: 'Template Mod',
+        mod_id: 'defiledlands',
+        mod_name: 'Defiled Lands',
         mod_version: project.version,
-        mod_authors: 'Template Author',
-        mod_description: 'Template Mod for Architectury'
+        mod_authors: 'Lykrast, shiroha',
+        mod_description: 'A dark dimension mod that adds the Defiled Lands biome, new creatures, blocks, items, and game mechanics. Ported to 1.20.1.\n污秽之地 —— 添加了污秽维度、新生物、方块、物品和游戏机制。'
     ]
 
     inputs.properties replaceProperties
@@ -127,6 +131,18 @@ dependencies {
     // Architectury API - 使用 Jar-in-Jar 内嵌
     modApi("dev.architectury:architectury-forge:9.2.14")
     include("dev.architectury:architectury-forge:9.2.14")
+    
+    // Curios API
+    modCompileOnly("top.theillusivec4.curios:curios-forge:${curios_version}:api")
+    modRuntimeOnly("top.theillusivec4.curios:curios-forge:${curios_version}")
+
+    // TerraBlender API
+    modImplementation("com.github.glitchfiend:TerraBlender-forge:${minecraft_version}-${terrablender_version}")
+    modImplementation("com.github.glitchfiend:GlitchCore-forge:${minecraft_version}-${glitchcore_version}")
+
+    // JEI
+    modCompileOnly("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+    modRuntimeOnly("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
 }
 
 // Source JAR 组装（合并 common 源码）
@@ -150,7 +166,7 @@ sourceSets {
             // Avoid JPMS split-package: keep top-level network package only in common
         }
         resources {
-            exclude 'assets/template-mod/lang/*.json'
+            exclude 'assets/defiledlands/lang/*.json'
         }
     }
 }

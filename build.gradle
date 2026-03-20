@@ -1,4 +1,4 @@
-// 根项目配置 - 多模块项目
+// ????? - ?????
 plugins {
 	id 'architectury-plugin' version '3.4-SNAPSHOT'
 	id 'dev.architectury.loom' version '1.6-SNAPSHOT' apply false
@@ -13,7 +13,7 @@ allprojects {
 	apply plugin: 'architectury-plugin'
 	
 	group = maven_group
-	version = '1.0.0-template-1.20.1'
+	version = '1.3-1.20.1'
 	
 	repositories {
 		maven { url = 'https://maven.architectury.dev/' }
@@ -21,7 +21,10 @@ allprojects {
 		maven { url = 'https://maven.minecraftforge.net/' }
 		maven { url = 'https://maven.shedaniel.me/' }
 		maven { url = 'https://maven.terraformersmc.com/' }
-        // curseforge与modrinth平台仓库
+		maven { url = 'https://maven.theillusivec4.top/' }
+		maven { url = 'https://maven.blamejared.com/' }
+		maven { url = 'https://modmaven.dev/' }
+        // curseforge?modrinth????
         exclusiveContent {
             forRepository {
                 maven {
@@ -59,14 +62,14 @@ allprojects {
 		withSourcesJar()
 	}
 	
-	// 关键：Gradle toolchain 默认只影响编译任务；runClient/Transformer 属于 JavaExec，
-	// 若系统默认 JDK 为 21 可能触发 Architectury Transformer 的已知崩溃。
-	// 这里强制所有 JavaExec 使用 Java 17 launcher，保证开发运行环境一致。
+	// ???Gradle toolchain ??????????runClient/Transformer ?? JavaExec?
+	// ????? JDK ? 21 ???? Architectury Transformer ??????
+	// ?????? JavaExec ?? Java 17 launcher????????????
 	tasks.withType(JavaExec).configureEach {
 		javaLauncher = javaToolchains.launcherFor {
 			languageVersion = JavaLanguageVersion.of(17)
 		}
-		// 设置运行游戏时的玩家名称
+		// ????????????
 		systemProperty 'minecraft.username', rootProject.properties.getOrDefault('minecraft_username', 'Player')
 	}
 }
@@ -87,11 +90,5 @@ subprojects {
 		mappings loom.officialMojangMappings()
 	}
 	
-	// 配置runClient任务，设置固定的玩家名称（仅 Fabric）
-	if (project.name == 'fabric') {
-		tasks.named('runClient', JavaExec).configure {
-			def username = rootProject.properties.getOrDefault('minecraft_username', 'Player')
-			args '--username', username
-		}
-	}
+	// ???? Fabric ???????????? Fabric ??
 }

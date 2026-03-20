@@ -1,0 +1,16 @@
+﻿{
+    "variants": {
+        "axis=y": {
+            "model": "defiledlands:block/tenebra_log"
+        },
+        "axis=z": {
+            "model": "defiledlands:block/tenebra_log",
+            "x": 90
+        },
+        "axis=x": {
+            "model": "defiledlands:block/tenebra_log",
+            "x": 90,
+            "y": 90
+        }
+    }
+}

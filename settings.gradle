@@ -53,8 +53,7 @@ dependencyResolutionManagement {
 		}
 	}
 }
-rootProject.name = 'template-mod'
+rootProject.name = 'defiledlands'
 // 包含子项目
 include 'common'
-include 'fabric'
 include 'forge'

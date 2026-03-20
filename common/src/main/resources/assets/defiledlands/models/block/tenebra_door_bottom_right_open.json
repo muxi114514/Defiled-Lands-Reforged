@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right_open",
+  "textures": {
+    "bottom": "defiledlands:block/door_tenebra_lower",
+    "top": "defiledlands:block/door_tenebra_upper"
+  }
+}

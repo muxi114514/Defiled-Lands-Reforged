@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " E ",
+    "ESE",
+    " E "
+  ],
+  "key": {
+    "E": {
+      "tag": "c:essencemourner"
+    },
+    "S": {
+      "tag": "c:gems/scarlite"
+    }
+  },
+  "result": {
+    "item": "defiledlands:remorseful_gem"
+  }
+}

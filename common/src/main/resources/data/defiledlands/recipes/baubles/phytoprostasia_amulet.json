@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "U U",
+    "VEV"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:string"
+    },
+    "U": {
+      "tag": "c:ingots/umbrium"
+    },
+    "E": {
+      "item": "defiledlands:scuttler_eye"
+    },
+    "V": {
+      "item": "defiledlands:vilespine"
+    }
+  },
+  "result": {
+    "item": "defiledlands:phytoprostasia_amulet"
+  }
+}

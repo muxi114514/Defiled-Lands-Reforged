@@ -1,11 +1,20 @@
  architectury {
-    common("fabric", "forge")
+    common("forge")
 }
 
 dependencies {
     // Architectury API（作为 mod 依赖以启用 Loom 重映射）
     modImplementation("dev.architectury:architectury:9.2.14")
-    compileOnly("net.fabricmc:fabric-loader:${project.loader_version}")
+    // Curios API
+    modCompileOnly("top.theillusivec4.curios:curios-forge:${curios_version}:api")
+    
+    // JEI API
+    modCompileOnly("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    modCompileOnly("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")
+    
+    // TerraBlender API and GlitchCore API
+    modCompileOnly("com.github.glitchfiend:TerraBlender-forge:${minecraft_version}-${terrablender_version}")
+    modCompileOnly("com.github.glitchfiend:GlitchCore-forge:${minecraft_version}-${glitchcore_version}")
 }
  
 sourceSets {

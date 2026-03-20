@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "defiledlands:desert_defiled",
+    "defiledlands:plains_defiled",
+    "defiledlands:forest_tenebra",
+    "defiledlands:forest_vilespine",
+    "defiledlands:hills_defiled",
+    "defiledlands:swamp_defiled",
+    "defiledlands:ice_plains_defiled"
+  ]
+}

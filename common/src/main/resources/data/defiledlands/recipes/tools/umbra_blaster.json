@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  E",
+    "IIB",
+    "  I"
+  ],
+  "key": {
+    "I": {
+      "tag": "c:ingots/umbrium"
+    },
+    "B": {
+      "tag": "c:storage_blocks/umbrium"
+    },
+    "E": {
+      "item": "defiledlands:scuttler_eye"
+    }
+  },
+  "result": {
+    "item": "defiledlands:umbra_blaster"
+  }
+}

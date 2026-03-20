@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "UEE",
+    "USU",
+    "UUU"
+  ],
+  "key": {
+    "U": {
+      "tag": "c:ingots/umbrium"
+    },
+    "S": {
+      "tag": "c:gems/scarlite"
+    },
+    "E": {
+      "item": "defiledlands:scuttler_eye"
+    }
+  },
+  "result": {
+    "item": "defiledlands:concussion_smasher"
+  }
+}

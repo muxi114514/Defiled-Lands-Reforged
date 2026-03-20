@@ -1,0 +1,40 @@
+{
+    "feature": "defiledlands:scuronotte",
+    "placement": [
+        {
+            "type": "minecraft:count",
+            "count": 3
+        },
+        {
+            "type": "minecraft:in_square"
+        },
+        {
+            "type": "minecraft:heightmap",
+            "heightmap": "MOTION_BLOCKING"
+        },
+        {
+            "type": "minecraft:environment_scan",
+            "direction_of_search": "down",
+            "max_steps": 12,
+            "target_condition": {
+                "type": "minecraft:matching_blocks",
+                "blocks": [
+                    "defiledlands:grass_defiled",
+                    "defiledlands:defiled_dirt",
+                    "minecraft:grass_block",
+                    "minecraft:dirt"
+                ]
+            },
+            "allowed_search_condition": {
+                "type": "minecraft:matching_blocks",
+                "blocks": [
+                    "minecraft:air",
+                    "defiledlands:scuronotte"
+                ]
+            }
+        },
+        {
+            "type": "minecraft:biome"
+        }
+    ]
+}

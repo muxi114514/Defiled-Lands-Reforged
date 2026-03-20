@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#defiledlands:is_defiled",
+  "features": [
+    "defiledlands:conjuring_altar",
+    "defiledlands:defiled_dungeon",
+    "defiledlands:corruption_post"
+  ],
+  "step": "underground_decoration"
+}

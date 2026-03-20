@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/grass_block",
+  "textures": {
+    "particle": "defiledlands:block/dirt_defiled",
+    "bottom": "defiledlands:block/dirt_defiled",
+    "top": "defiledlands:block/grass_defiled_top",
+    "side": "defiledlands:block/grass_defiled_side",
+    "overlay": "defiledlands:block/grass_defiled_side"
+  }
+}

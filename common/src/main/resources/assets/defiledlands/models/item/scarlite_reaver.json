@@ -1,0 +1,6 @@
+﻿{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "defiledlands:item/scarlite_reaver"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "U ",
+    "UH",
+    " G"
+  ],
+  "key": {
+    "G": {
+      "tag": "c:gems/scarlite"
+    },
+    "U": {
+      "tag": "c:ingots/umbrium"
+    },
+    "H": {
+      "item": "defiledlands:black_heart"
+    }
+  },
+  "result": {
+    "item": "defiledlands:scarlite_razor"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "itemGroup.defiledlands": "Defiled Lands",
+  
+  "block.defiledlands.stone_defiled": "Defiled Stone",
+  "block.defiledlands.sandstone_defiled": "Defiled Sandstone",
+  "block.defiledlands.sand_defiled": "Defiled Sand",
+  "block.defiledlands.defiled_dirt": "Defiled Dirt",
+  "block.defiledlands.grass_defiled": "Defiled Grass Block",
+  "block.defiledlands.gravel_defiled": "Defiled Gravel",
+  
+  "block.defiledlands.defiled_stone_bricks": "Defiled Stone Bricks",
+  "block.defiledlands.cracked_defiled_stone_bricks": "Cracked Defiled Stone Bricks",
+  "block.defiledlands.mossy_defiled_stone_bricks": "Mossy Defiled Stone Bricks",
+  "block.defiledlands.mossy_defiled_stone": "Mossy Defiled Stone",
+  "block.defiledlands.stone_corrupted": "Corrupted Stone",
+  
+  "block.defiledlands.tenebra_door": "Tenebra Door",
+  "block.defiledlands.stone_defiled_stairs": "Defiled Stone Stairs",
+  "block.defiledlands.sandstone_defiled_stairs": "Defiled Sandstone Stairs",
+  "block.defiledlands.stone_defiled_bricks_stairs": "Defiled Stone Brick Stairs",
+  "block.defiledlands.tenebra_stairs": "Tenebra Stairs",
+  "block.defiledlands.stone_defiled_slab": "Defiled Stone Slab",
+  "block.defiledlands.sandstone_defiled_slab": "Defiled Sandstone Slab",
+  "block.defiledlands.stone_defiled_bricks_slab": "Defiled Stone Brick Slab",
+  "block.defiledlands.tenebra_slab": "Tenebra Slab",
+  
+  "block.defiledlands.ravaging_stone": "Ravaging Stone",
+  "block.defiledlands.ravaging_bricks": "Ravaging Bricks",
+  "block.defiledlands.glass_obscure": "Obscure Glass",
+  "block.defiledlands.altar_base": "Altar Base",
+  
+  "block.defiledlands.tenebra_log": "Tenebra Log",
+  "block.defiledlands.tenebra_leaves": "Tenebra Leaves",
+  "block.defiledlands.tenebra_sapling": "Tenebra Sapling",
+  "block.defiledlands.tenebra_planks": "Tenebra Planks",
+  "block.defiledlands.vilespine": "Vilespine",
+  "block.defiledlands.blastem": "Blastem",
+  "block.defiledlands.scuronotte": "Scuronotte",
+  
+  "block.defiledlands.hephaestite_ore": "Hephaestite Ore",
+  "block.defiledlands.hephaestite_block": "Block of Hephaestite",
+  "block.defiledlands.umbrium_ore": "Umbrium Ore",
+  "block.defiledlands.umbrium_block": "Block of Umbrium",
+  "block.defiledlands.scarlite_ore": "Scarlite Ore",
+  "block.defiledlands.scarlite_block": "Block of Scarlite",
+  
+  "block.defiledlands.healing_pad": "Healing Pad",
+  "block.defiledlands.conjuring_altar": "Conjuring Altar",
+  
+  "item.defiledlands.hephaestite": "Hephaestite Shard",
+  "item.defiledlands.umbrium_ingot": "Umbrium Ingot",
+  "item.defiledlands.umbrium_nugget": "Umbrium Nugget",
+  "item.defiledlands.scarlite": "Scarlite",
+  
+  "item.defiledlands.blastem_fruit": "Blastem Fruit",
+  "item.defiledlands.blastem_fruit_blazing": "Blazing Blastem Fruit",
+  "item.defiledlands.defilement_powder": "Defilement Powder",
+  
+  "item.defiledlands.scuttler_eye": "Scuttler Eye",
+  "item.defiledlands.black_heart": "Black Heart",
+  "item.defiledlands.foul_candy": "Foul Candy",
+  "item.defiledlands.book_wyrm_scale": "Book Wyrm Scale",
+  "item.defiledlands.book_wyrm_scale_golden": "Golden Book Wyrm Scale",
+  
+  "item.defiledlands.umbrium_axe": "Umbrium Axe",
+  "item.defiledlands.umbrium_hoe": "Umbrium Hoe",
+  "item.defiledlands.umbrium_pickaxe": "Umbrium Pickaxe",
+  "item.defiledlands.umbrium_shovel": "Umbrium Shovel",
+  "item.defiledlands.umbrium_sword": "Umbrium Sword",
+  
+  "item.defiledlands.scarlite_reaver": "Scarlite Reaver",
+  "item.defiledlands.scarlite_razor": "Scarlite Razor",
+  
+  "item.defiledlands.umbrium_helmet": "Umbrium Helmet",
+  "item.defiledlands.umbrium_chestplate": "Umbrium Chestplate",
+  "item.defiledlands.umbrium_leggings": "Umbrium Leggings",
+  "item.defiledlands.umbrium_boots": "Umbrium Boots",
+  
+  "item.defiledlands.book_wyrm_scale_helmet": "Book Wyrm Scale Helmet",
+  "item.defiledlands.book_wyrm_scale_chestplate": "Book Wyrm Scale Chestplate",
+  "item.defiledlands.book_wyrm_scale_leggings": "Book Wyrm Scale Leggings",
+  "item.defiledlands.book_wyrm_scale_boots": "Book Wyrm Scale Boots",
+  
+  "item.defiledlands.calling_stone": "Calling Stone",
+  "item.defiledlands.essence_destroyer": "Essence of the Destroyer",
+  
+  "item.defiledlands.scarlite_ring": "Scarlite Ring",
+  "item.defiledlands.phytoprostasia_amulet": "Phytoprostasia Amulet",
+  
+  "item.defiledlands.spawn_egg_shambler": "Shambler Spawn Egg",
+  "item.defiledlands.spawn_egg_scuttler": "Scuttler Spawn Egg",
+  "item.defiledlands.spawn_egg_host": "Host Spawn Egg",
+  
+  "entity.defiledlands.shambler": "Shambler",
+  "entity.defiledlands.scuttler": "Scuttler",
+  "entity.defiledlands.host": "Host",
+  "entity.defiledlands.blastem_fruit": "Blastem Fruit",
+  "entity.defiledlands.blastem_fruit_blazing": "Blazing Blastem Fruit",
+  
+  "effect.defiledlands.vulnerability": "Vulnerability",
+  "effect.defiledlands.grounded": "Grounded",
+  "effect.defiledlands.bleeding": "Bleeding",
+  
+  "biome.defiledlands.desert_defiled": "Defiled Desert",
+  "biome.defiledlands.plains_defiled": "Defiled Plains",
+  "biome.defiledlands.forest_tenebra": "Tenebra Forest",
+  "biome.defiledlands.forest_vilespine": "Vilespine Forest",
+  "biome.defiledlands.hills_defiled": "Defiled Hills",
+  "biome.defiledlands.swamp_defiled": "Defiled Swamp",
+  "biome.defiledlands.ice_plains_defiled": "Defiled Ice Plains",
+  "gui.defiledlands.category.corruption": "corruption"
+}

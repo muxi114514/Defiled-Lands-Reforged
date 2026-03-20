@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "defiledlands:tenebra_stairs"
+    }
+  },
+  "result": {
+    "item": "defiledlands:tenebra_planks",
+    "count": 3
+  }
+}

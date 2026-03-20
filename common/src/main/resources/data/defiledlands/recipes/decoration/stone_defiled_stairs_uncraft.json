@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "defiledlands:stone_defiled_stairs"
+    }
+  },
+  "result": {
+    "item": "defiledlands:stone_defiled",
+    "count": 3
+  }
+}

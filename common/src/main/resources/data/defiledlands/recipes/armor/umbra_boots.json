@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "U U",
+    "UEU"
+  ],
+  "key": {
+    "U": {
+      "tag": "c:ingots/umbrium"
+    },
+    "E": {
+      "item": "defiledlands:essence_mourner"
+    }
+  },
+  "result": {
+    "item": "defiledlands:umbra_boots"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "defiledlands:defiled_stone_bricks"
+    }
+  },
+  "result": {
+    "item": "defiledlands:stone_defiled_bricks_slab",
+    "count": 6
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:storage_blocks/umbrium"
+    }
+  ],
+  "result": {
+    "item": "defiledlands:umbrium_ingot",
+    "count": 9
+  }
+}

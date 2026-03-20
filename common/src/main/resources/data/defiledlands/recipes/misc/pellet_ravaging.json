@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "SRS",
+    " S "
+  ],
+  "key": {
+    "R": {
+      "tag": "c:ingots/ravaging"
+    },
+    "S": {
+      "tag": "c:stonedefiled"
+    }
+  },
+  "result": {
+    "item": "defiledlands:pellet_ravaging",
+    "count": 8
+  }
+}

@@ -1,0 +1,1 @@
+﻿{ "variants": { "axis=y": { "model": "defiledlands:block/tenebra_wood" }, "axis=z": { "model": "defiledlands:block/tenebra_wood", "x": 90 }, "axis=x": { "model": "defiledlands:block/tenebra_wood", "x": 90, "y": 90 } } }

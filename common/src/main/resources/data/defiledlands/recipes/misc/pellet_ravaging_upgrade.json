@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:essencedestroyer"
+    },
+    {
+      "item": "defiledlands:pellet_umbrium"
+    },
+    {
+      "item": "defiledlands:pellet_umbrium"
+    }
+  ],
+  "result": {
+    "item": "defiledlands:pellet_ravaging",
+    "count": 2
+  }
+}

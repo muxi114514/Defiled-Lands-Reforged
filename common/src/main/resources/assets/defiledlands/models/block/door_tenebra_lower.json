@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "defiledlands:block/door_tenebra_lower"
+  }
+}

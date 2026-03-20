@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TST",
+    "SHS",
+    "TST"
+  ],
+  "key": {
+    "S": {
+      "tag": "c:gems/scarlite"
+    },
+    "T": {
+      "tag": "c:stonedefiled"
+    },
+    "H": {
+      "item": "defiledlands:black_heart"
+    }
+  },
+  "result": {
+    "item": "defiledlands:calling_stone"
+  }
+}

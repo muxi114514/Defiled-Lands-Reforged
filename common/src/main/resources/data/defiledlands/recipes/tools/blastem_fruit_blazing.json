@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:gemhephaestite"
+    },
+    {
+      "item": "defiledlands:blastem_fruit"
+    },
+    {
+      "item": "defiledlands:blastem_fruit"
+    },
+    {
+      "item": "defiledlands:blastem_fruit"
+    },
+    {
+      "item": "defiledlands:blastem_fruit"
+    }
+  ],
+  "result": {
+    "item": "defiledlands:blastem_fruit_blazing",
+    "count": 4
+  }
+}

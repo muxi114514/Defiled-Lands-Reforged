@@ -1,25 +1,52 @@
 # Forge Mods.toml 配置文件
 modLoader = "javafml"
-loaderVersion = "[47,)"
+loaderVersion = "${loader_version_range}"
 license = "MIT"
 
 [[mods]]
-modId = "template-mod"
+modId = "defiledlands"
 version = "${mod_version}"
-displayName = "Template Mod"
-authors = "Template Author"
-description = '''Template Mod for Architectury'''
+displayName = "${mod_name}"
+authors = "${mod_authors}"
+logoFile = "logo.png"
+description = '''${mod_description}'''
 
-[[dependencies.template-mod]]
+# Forge 依赖
+[[dependencies.defiledlands]]
 modId = "forge"
 mandatory = true
-versionRange = "[47,48)"
+versionRange = "${forge_version_range}"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.template-mod]]
+# Minecraft 版本
+[[dependencies.defiledlands]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.20.1,1.21)"
+versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
+
+# TerraBlender - 生物群系注册
+[[dependencies.defiledlands]]
+modId = "terrablender"
+mandatory = true
+versionRange = "[3.0.1,)"
+ordering = "AFTER"
+side = "BOTH"
+
+# Curios API - 饰品栏位（可选）
+[[dependencies.defiledlands]]
+modId = "curios"
+mandatory = false
+versionRange = "[5.0.0,)"
+ordering = "AFTER"
+side = "BOTH"
+
+# JEI - 合成表查看（可选）
+[[dependencies.defiledlands]]
+modId = "jei"
+mandatory = false
+versionRange = "[15.0.0,)"
+ordering = "AFTER"
+side = "CLIENT"

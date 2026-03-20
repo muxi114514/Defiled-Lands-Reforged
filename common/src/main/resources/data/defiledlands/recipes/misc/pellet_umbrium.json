@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "SUS",
+    " S "
+  ],
+  "key": {
+    "U": {
+      "tag": "c:ingots/umbrium"
+    },
+    "S": {
+      "tag": "c:stonedefiled"
+    }
+  },
+  "result": {
+    "item": "defiledlands:pellet_umbrium",
+    "count": 8
+  }
+}

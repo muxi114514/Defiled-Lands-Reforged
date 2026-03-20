@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " R ",
+    "USU",
+    " U "
+  ],
+  "key": {
+    "S": {
+      "tag": "c:storage_blocks/scarlite"
+    },
+    "R": {
+      "tag": "c:ingots/ravaging"
+    },
+    "U": {
+      "tag": "c:ingots/umbrium"
+    }
+  },
+  "result": {
+    "item": "defiledlands:idol_sorrow"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "defiledlands:block/planks_tenebra",
+    "top": "defiledlands:block/planks_tenebra",
+    "side": "defiledlands:block/planks_tenebra"
+  }
+}

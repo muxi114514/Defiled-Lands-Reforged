@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S",
+    "S"
+  ],
+  "key": {
+    "S": {
+      "item": "defiledlands:stone_defiled_slab"
+    }
+  },
+  "result": {
+    "item": "defiledlands:sandstone_defiled"
+  }
+}

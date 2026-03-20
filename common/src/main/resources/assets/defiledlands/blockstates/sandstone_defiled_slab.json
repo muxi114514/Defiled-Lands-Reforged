@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "defiledlands:block/sandstone_defiled_slab"
+    },
+    "type=top": {
+      "model": "defiledlands:block/sandstone_defiled_slab_top"
+    },
+    "type=double": {
+      "model": "defiledlands:block/sandstone_defiled"
+    }
+  }
+}

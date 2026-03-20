@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "defiledlands:umbrium_ore"
+  },
+  "result": "defiledlands:umbrium_ingot",
+  "experience": 0.7,
+  "cookingtime": 100
+}

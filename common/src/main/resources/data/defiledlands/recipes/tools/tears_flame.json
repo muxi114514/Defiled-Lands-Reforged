@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "MRM",
+    " U ",
+    " U "
+  ],
+  "key": {
+    "M": {
+      "tag": "c:storage_blocks/hephaestite"
+    },
+    "R": {
+      "tag": "c:gemremorseful"
+    },
+    "U": {
+      "tag": "c:ingots/umbrium"
+    }
+  },
+  "result": {
+    "item": "defiledlands:tears_flame"
+  }
+}

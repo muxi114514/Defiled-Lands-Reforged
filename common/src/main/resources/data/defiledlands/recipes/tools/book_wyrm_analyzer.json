@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "UUU",
+    "UGU",
+    "UEU"
+  ],
+  "key": {
+    "U": {
+      "tag": "c:ingots/umbrium"
+    },
+    "G": {
+      "tag": "c:blockglass"
+    },
+    "E": {
+      "item": "defiledlands:scuttler_eye"
+    }
+  },
+  "result": {
+    "item": "defiledlands:book_wyrm_analyzer"
+  }
+}

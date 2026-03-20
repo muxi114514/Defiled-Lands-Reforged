@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "defiledlands:defiled_stone_bricks"
+  },
+  "result": "defiledlands:stone_defiled_bricks_slab",
+  "count": 2
+}

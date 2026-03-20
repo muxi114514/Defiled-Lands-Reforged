@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "URU",
+    " S ",
+    " C "
+  ],
+  "key": {
+    "U": {
+      "tag": "c:ingots/umbrium"
+    },
+    "R": {
+      "tag": "c:ingots/ravaging"
+    },
+    "C": {
+      "tag": "c:gems/scarlite"
+    },
+    "S": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "defiledlands:ravaging_pickaxe"
+  }
+}

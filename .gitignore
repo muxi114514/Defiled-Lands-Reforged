@@ -88,3 +88,18 @@ gradle-local.properties
 /server/
 /Oh-The-Biomes-Weve-Gone/
 /MCP-Reborn-1.21
+
+# 开发临时文件
+*.py
+/*.jar
+*.lang
+/temp_disabled/
+
+# 参考项目目录
+/BiomesOPlenty-1.20.1/
+/Curios-1.20.x/
+/DefiledLands-master/
+/GlitchCore-1.20.1/
+/JustEnoughItems-1.20.1/
+/TerraBlender-1.20.1/
+/RLCraft-Luckified-main/

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "U U",
+    "UUU",
+    "UUU"
+  ],
+  "key": {
+    "U": {
+      "tag": "c:ingots/umbrium"
+    }
+  },
+  "result": {
+    "item": "defiledlands:umbrium_chestplate"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:ingots/umbrium"
+    }
+  ],
+  "result": {
+    "item": "defiledlands:umbrium_nugget",
+    "count": 9
+  }
+}

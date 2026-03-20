@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  E",
+    "RUC",
+    "  L"
+  ],
+  "key": {
+    "U": {
+      "tag": "c:ingots/umbrium"
+    },
+    "R": {
+      "tag": "c:ingots/ravaging"
+    },
+    "C": {
+      "tag": "c:gems/scarlite"
+    },
+    "E": {
+      "item": "defiledlands:scuttler_eye"
+    },
+    "L": {
+      "tag": "c:leather"
+    }
+  },
+  "result": {
+    "item": "defiledlands:the_ravager"
+  }
+}

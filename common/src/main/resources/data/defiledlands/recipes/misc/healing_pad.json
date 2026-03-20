@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "USU",
+    "THT"
+  ],
+  "key": {
+    "S": {
+      "tag": "c:gems/scarlite"
+    },
+    "U": {
+      "tag": "c:ingots/umbrium"
+    },
+    "T": {
+      "tag": "c:stonedefiled"
+    },
+    "H": {
+      "item": "defiledlands:black_heart"
+    }
+  },
+  "result": {
+    "item": "defiledlands:healing_pad"
+  }
+}

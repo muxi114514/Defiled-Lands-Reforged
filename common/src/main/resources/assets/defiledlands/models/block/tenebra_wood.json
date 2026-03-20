@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "defiledlands:block/log_tenebra_side",
+    "side": "defiledlands:block/log_tenebra_side"
+  }
+}

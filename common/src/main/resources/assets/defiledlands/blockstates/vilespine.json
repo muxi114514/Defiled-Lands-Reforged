@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "age=0": { "model": "defiledlands:block/vilespine" },
+    "age=1": { "model": "defiledlands:block/vilespine" },
+    "age=2": { "model": "defiledlands:block/vilespine" },
+    "age=3": { "model": "defiledlands:block/vilespine" },
+    "age=4": { "model": "defiledlands:block/vilespine" },
+    "age=5": { "model": "defiledlands:block/vilespine" },
+    "age=6": { "model": "defiledlands:block/vilespine" },
+    "age=7": { "model": "defiledlands:block/vilespine" },
+    "age=8": { "model": "defiledlands:block/vilespine" },
+    "age=9": { "model": "defiledlands:block/vilespine" },
+    "age=10": { "model": "defiledlands:block/vilespine" },
+    "age=11": { "model": "defiledlands:block/vilespine" },
+    "age=12": { "model": "defiledlands:block/vilespine" },
+    "age=13": { "model": "defiledlands:block/vilespine" },
+    "age=14": { "model": "defiledlands:block/vilespine" },
+    "age=15": { "model": "defiledlands:block/vilespine" }
+  }
+}

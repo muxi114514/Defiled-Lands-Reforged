@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "defiledlands:stone_defiled"
+  },
+  "result": "defiledlands:stone_defiled_stairs",
+  "count": 1
+}

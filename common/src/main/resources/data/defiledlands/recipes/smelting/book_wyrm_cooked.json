@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "defiledlands:book_wyrm_raw"
+  },
+  "result": "defiledlands:book_wyrm_cooked",
+  "experience": 0.35,
+  "cookingtime": 200
+}

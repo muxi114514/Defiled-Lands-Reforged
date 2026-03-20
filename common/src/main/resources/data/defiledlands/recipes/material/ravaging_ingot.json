@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " E ",
+    "EUE",
+    " E "
+  ],
+  "key": {
+    "E": {
+      "tag": "c:essencedestroyer"
+    },
+    "U": {
+      "tag": "c:ingots/umbrium"
+    }
+  },
+  "result": {
+    "item": "defiledlands:ravaging_ingot"
+  }
+}

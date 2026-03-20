@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:storage_blocks/scarlite"
+    }
+  ],
+  "result": {
+    "item": "defiledlands:scarlite",
+    "count": 9
+  }
+}

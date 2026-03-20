@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "S S"
+  ],
+  "key": {
+    "S": {
+      "item": "defiledlands:book_wyrm_scale"
+    }
+  },
+  "result": {
+    "item": "defiledlands:scale_helmet"
+  }
+}
