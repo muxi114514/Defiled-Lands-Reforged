@@ -18,7 +18,7 @@ A Minecraft 1.20.1 Forge mod that adds a dark, corrupted dimension — the Defil
 | Minecraft Forge | 47.x (1.20.1) | ✅ Yes |
 | TerraBlender | 3.0.1+ | ✅ Yes |
 | GlitchCore | 0.0.1+ | ✅ Yes (TerraBlender dependency) |
-| Curios API | 5.x+ | ❌ Optional |
+| Curios API | 5.x+ | ✅ Yes |
 | JEI | 15.x+ | ❌ Optional |
 
 ## Installation
