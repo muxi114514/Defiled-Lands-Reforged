@@ -1,8 +1,0 @@
-{
-	"parent": "dynamictrees:block/sapling",
-	"textures": {
-		"particle": "cuisine:block/leaves_citron",
-		"log": "cuisine:block/log",
-		"leaves": "cuisine:block/leaves_citron"
-	}
-}

@@ -103,3 +103,10 @@ gradle-local.properties
 /JustEnoughItems-1.20.1/
 /TerraBlender-1.20.1/
 /RLCraft-Luckified-main/
+
+# 动态树源代码引用（独立仓库或第三方源码）
+/DynamicTrees-ArsNouveau-1.20.1/
+/DynamicTrees-BOP-1.20.1/
+/DynamicTrees-ExC-1.12.2/
+/DynamicTrees-release-1.20.1/
+/DynamicTrees-DefiledLands/

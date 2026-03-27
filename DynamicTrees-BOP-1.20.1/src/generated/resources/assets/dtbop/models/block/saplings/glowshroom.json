@@ -1,7 +1,0 @@
-{
-  "parent": "dtbop:block/smartmodel/mushroom_round2",
-  "render_type": "minecraft:cutout_mipped",
-  "textures": {
-    "cap": "dtbop:block/glowshroom_cap"
-  }
-}

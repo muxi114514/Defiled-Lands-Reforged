@@ -1,6 +1,0 @@
-{
-  "parent": "dynamictrees:item/standard_seed",
-  "textures": {
-    "layer0": "dtarsnouveau:item/yellow_archwood_seed"
-  }
-}

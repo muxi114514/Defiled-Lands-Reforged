@@ -1,8 +1,0 @@
-{
-  "parent": "dtbop:block/tall_slab",
-  "textures": {
-    "bottom": "biomesoplenty:block/glowshroom_block_inside",
-    "side": "biomesoplenty:block/glowshroom_block",
-    "top": "biomesoplenty:block/glowshroom_block"
-  }
-}
