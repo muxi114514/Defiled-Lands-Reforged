@@ -1,0 +1,10 @@
+{
+  "only_if_loaded": "dynamictreesplus",
+  "primitive_cap": "biomesoplenty:toadstool_block",
+  "age_zero_shape": "dtbop:toadstool_age0",
+  "material_color": "COLOR_ORANGE",
+  "model_overrides": {
+    "cap_center_age_0_parent": "dtbop:block/thick_column"
+  },
+  "mushroom_item": "biomesoplenty:toadstool"
+}

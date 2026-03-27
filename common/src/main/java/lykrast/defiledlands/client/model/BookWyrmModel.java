@@ -9,7 +9,7 @@ import net.minecraft.client.model.geom.builders.*;
 public class BookWyrmModel<T extends BookWyrmEntity> extends QuadrupedModel<T> {
 
     public BookWyrmModel(ModelPart root) {
-        // scaleHead(true), babyYHeadOffset(4.0F), babyZHeadOffset(2.0F), babyHeadScale(2.0F), babyBodyScale(2.0F), bodyYOffset(24)
+
         super(root, true, 4.0F, 2.0F, 2.0F, 2.0F, 24);
     }
 
@@ -48,9 +48,7 @@ public class BookWyrmModel<T extends BookWyrmEntity> extends QuadrupedModel<T> {
     @Override
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-        // QuadrupedModel hardcodes head position in setupAnim, overriding our initial PartPose.
-        // We override it here to correct the Book Wyrm's head position.
-        // For baby, shift head down (larger Y) and closer in Z to align with the body visually.
+
         if (entity.isBaby()) {
             this.head.setPos(0.0F, 22.0F, -3.0F);
         } else {

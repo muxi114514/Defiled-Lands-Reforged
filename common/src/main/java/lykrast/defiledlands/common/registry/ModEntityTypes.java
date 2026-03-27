@@ -14,7 +14,6 @@ import net.minecraft.world.entity.MobCategory;
 public class ModEntityTypes {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(DefiledLands.MOD_ID, Registries.ENTITY_TYPE);
 
-    // Monsters
     public static final RegistrySupplier<EntityType<ShamblerEntity>> SHAMBLER = ENTITIES.register("shambler", () ->
             EntityType.Builder.of(ShamblerEntity::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.95F)
@@ -45,7 +44,6 @@ public class ModEntityTypes {
                     .clientTrackingRange(10)
                     .build("slime_defiled"));
 
-    // Bosses
     public static final RegistrySupplier<EntityType<lykrast.defiledlands.common.entity.boss.DestroyerEntity>> DESTROYER = ENTITIES.register("the_destroyer", () ->
             EntityType.Builder.of(lykrast.defiledlands.common.entity.boss.DestroyerEntity::new, MobCategory.MONSTER)
                     .sized(0.7F, 2.4F)
@@ -58,14 +56,12 @@ public class ModEntityTypes {
                     .clientTrackingRange(10)
                     .build("the_mourner"));
 
-    // Passive
     public static final RegistrySupplier<EntityType<lykrast.defiledlands.common.entity.passive.BookWyrmEntity>> BOOK_WYRM = ENTITIES.register("book_wyrm", () ->
             EntityType.Builder.of(lykrast.defiledlands.common.entity.passive.BookWyrmEntity::new, MobCategory.CREATURE)
                     .sized(0.9F, 0.9F)
                     .clientTrackingRange(10)
                     .build("book_wyrm"));
 
-    // Projectiles
     public static final RegistrySupplier<EntityType<BlastemFruitEntity>> BLASTEM_FRUIT = ENTITIES.register("blastem_fruit", () ->
             EntityType.Builder.<BlastemFruitEntity>of(BlastemFruitEntity::new, MobCategory.MISC)
                     .sized(0.25F, 0.25F)

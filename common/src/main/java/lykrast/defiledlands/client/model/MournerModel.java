@@ -22,9 +22,7 @@ public class MournerModel<T extends MournerEntity> extends HumanoidModel<T> {
     @Override
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-        
-        // In the future: if (entity.isFiring()) rotate arms based on attack type.
-        // For now, doing simple floating rotation.
+
         this.rightArm.xRot -= 0.1F;
         this.leftArm.xRot -= 0.1F;
     }

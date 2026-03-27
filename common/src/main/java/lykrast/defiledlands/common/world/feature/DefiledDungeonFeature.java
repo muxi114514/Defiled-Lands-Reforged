@@ -18,10 +18,6 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
-/**
- * 污秽地牢生成器
- * 生成小型地下房间，包含刷怪笼和战利品箱
- */
 public class DefiledDungeonFeature extends Feature<NoneFeatureConfiguration> {
 
     public static final ResourceLocation LOOT_TABLE = new ResourceLocation(DefiledLands.MOD_ID,
@@ -33,7 +29,7 @@ public class DefiledDungeonFeature extends Feature<NoneFeatureConfiguration> {
 
     @Override
     public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
-        // 配置关闭时跳过地牢生成
+
         if (!lykrast.defiledlands.common.util.CorruptionHelper.dungeonEnabled)
             return false;
 
@@ -41,16 +37,14 @@ public class DefiledDungeonFeature extends Feature<NoneFeatureConfiguration> {
         BlockPos pos = context.origin();
         RandomSource random = context.random();
 
-        // 随机大小
-        int sizeX = random.nextInt(2) + 2; // 2-3
-        int sizeZ = random.nextInt(2) + 2; // 2-3
+        int sizeX = random.nextInt(2) + 2;
+        int sizeZ = random.nextInt(2) + 2;
 
         int minX = -sizeX - 1;
         int maxX = sizeX + 1;
         int minZ = -sizeZ - 1;
         int maxZ = sizeZ + 1;
 
-        // 检查是否有足够的空间
         int doorCount = 0;
         for (int x = minX; x <= maxX; x++) {
             for (int y = -1; y <= 4; y++) {
@@ -59,13 +53,11 @@ public class DefiledDungeonFeature extends Feature<NoneFeatureConfiguration> {
                     BlockState state = level.getBlockState(checkPos);
                     boolean isSolid = state.isSolidRender(level, checkPos);
 
-                    // 地板和天花板必须是固体
                     if (y == -1 && !isSolid)
                         return false;
                     if (y == 4 && !isSolid)
                         return false;
 
-                    // 计算门的数量
                     if ((x == minX || x == maxX || z == minZ || z == maxZ) &&
                             y == 0 &&
                             level.isEmptyBlock(checkPos) &&
@@ -76,12 +68,10 @@ public class DefiledDungeonFeature extends Feature<NoneFeatureConfiguration> {
             }
         }
 
-        // 必须有 1-5 个门
         if (doorCount < 1 || doorCount > 5) {
             return false;
         }
 
-        // 生成地牢
         BlockState bricks = ModBlocks.STONE_BRICKS_DEFILED.get().defaultBlockState();
         BlockState crackedBricks = ModBlocks.CRACKED_STONE_BRICKS_DEFILED.get().defaultBlockState();
 
@@ -90,21 +80,20 @@ public class DefiledDungeonFeature extends Feature<NoneFeatureConfiguration> {
                 for (int z = minZ; z <= maxZ; z++) {
                     BlockPos placePos = pos.offset(x, y, z);
 
-                    // 内部空间
                     if (x != minX && y != -1 && z != minZ &&
                             x != maxX && y != 4 && z != maxZ) {
-                        // 清空内部（除了箱子）
+
                         if (!(level.getBlockState(placePos).getBlock() instanceof ChestBlock)) {
                             level.setBlock(placePos, Blocks.AIR.defaultBlockState(), 2);
                         }
                     }
-                    // 墙壁、地板、天花板
+
                     else if (placePos.getY() >= 0 &&
                             !level.getBlockState(placePos.below()).isSolidRender(level, placePos.below())) {
                         level.setBlock(placePos, Blocks.AIR.defaultBlockState(), 2);
                     } else if (level.getBlockState(placePos).isSolidRender(level, placePos) &&
                             !(level.getBlockState(placePos).getBlock() instanceof ChestBlock)) {
-                        // 25% 概率使用裂纹石砖
+
                         BlockState blockToPlace = random.nextInt(4) == 0 ? crackedBricks : bricks;
                         level.setBlock(placePos, blockToPlace, 2);
                     }
@@ -112,7 +101,6 @@ public class DefiledDungeonFeature extends Feature<NoneFeatureConfiguration> {
             }
         }
 
-        // 放置箱子（1-2个）
         for (int i = 0; i < 2; i++) {
             for (int attempt = 0; attempt < 3; attempt++) {
                 int chestX = pos.getX() + random.nextInt(sizeX * 2 + 1) - sizeX;
@@ -121,7 +109,7 @@ public class DefiledDungeonFeature extends Feature<NoneFeatureConfiguration> {
                 BlockPos chestPos = new BlockPos(chestX, chestY, chestZ);
 
                 if (level.isEmptyBlock(chestPos)) {
-                    // 检查是否靠墙
+
                     int solidSides = 0;
                     Direction chestFacing = Direction.NORTH;
 
@@ -132,7 +120,6 @@ public class DefiledDungeonFeature extends Feature<NoneFeatureConfiguration> {
                         }
                     }
 
-                    // 只有一面靠墙时放置箱子
                     if (solidSides == 1) {
                         BlockState chestState = Blocks.CHEST.defaultBlockState()
                                 .setValue(ChestBlock.FACING, chestFacing.getOpposite());
@@ -148,12 +135,10 @@ public class DefiledDungeonFeature extends Feature<NoneFeatureConfiguration> {
             }
         }
 
-        // 放置刷怪笼
         level.setBlock(pos, Blocks.SPAWNER.defaultBlockState(), 2);
         BlockEntity blockEntity = level.getBlockEntity(pos);
         if (blockEntity instanceof SpawnerBlockEntity spawner) {
-            // TODO: 设置刷怪笼生成的怪物
-            // spawner.getSpawner().setEntityId(pickMobSpawner(random));
+
         }
 
         return true;

@@ -37,7 +37,7 @@ public class ScuttlerEntity extends Spider implements IEntityDefiled {
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 0.8D));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
-        
+
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, false));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolem.class, false));
@@ -50,7 +50,7 @@ public class ScuttlerEntity extends Spider implements IEntityDefiled {
 
     @Override
     protected void checkFallDamage(double y, boolean onGround, BlockState state, BlockPos pos) {
-        // Do nothing to prevent fall damage
+
     }
 
     @Override
@@ -58,7 +58,6 @@ public class ScuttlerEntity extends Spider implements IEntityDefiled {
         return new ResourceLocation(DefiledLands.MOD_ID, "entities/scuttler");
     }
 
-    // Custom Spider Attack Goal just like Vanilla since 1.12 used custom strafe logic
     static class SpiderAttackGoal extends MeleeAttackGoal {
         public SpiderAttackGoal(Spider spider) {
             super(spider, 1.0D, true);
@@ -66,7 +65,7 @@ public class ScuttlerEntity extends Spider implements IEntityDefiled {
 
         @Override
         public boolean canUse() {
-            return super.canUse() && !this.mob.isVehicle(); // Spider specific check
+            return super.canUse() && !this.mob.isVehicle();
         }
 
         @Override

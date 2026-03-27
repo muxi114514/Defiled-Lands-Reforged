@@ -17,7 +17,6 @@ public class DefiledLandsMod {
     public DefiledLandsMod() {
         System.out.println("Defiled Lands Mod (Forge) initializing...");
 
-        // 注册配置
         DefiledLandsConfig.register();
 
         EventBuses.registerModEventBus(MOD_ID, FMLJavaModLoadingContext.get().getModEventBus());
@@ -32,10 +31,9 @@ public class DefiledLandsMod {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            // 初始化污化配方（必须在此处调用，方块注册完成后才能安全访问 Registry 对象）
+
             CorruptionRecipes.init();
 
-            // 权重为 0 时不注册 Region，完全禁用污秽群系生成
             int weight = lykrast.defiledlands.common.util.CorruptionHelper.biomeRegionWeight;
             if (weight > 0) {
                 terrablender.api.Regions

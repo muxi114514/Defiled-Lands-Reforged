@@ -19,7 +19,7 @@ public class ScuttlerRenderer extends MobRenderer<ScuttlerEntity, SpiderModel<Sc
 
     @Override
     protected float getFlipDegrees(ScuttlerEntity spider) {
-        // Flipping 180 on death
+
         return 180.0F;
     }
 

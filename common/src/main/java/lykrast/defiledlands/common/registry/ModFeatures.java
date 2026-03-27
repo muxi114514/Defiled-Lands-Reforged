@@ -14,12 +14,10 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 public class ModFeatures {
     public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(DefiledLands.MOD_ID, Registries.FEATURE);
 
-    // 结构
     public static final RegistrySupplier<Feature<NoneFeatureConfiguration>> DEFILED_DUNGEON = FEATURES.register("defiled_dungeon", () -> new DefiledDungeonFeature(NoneFeatureConfiguration.CODEC));
     public static final RegistrySupplier<Feature<NoneFeatureConfiguration>> CONJURING_ALTAR = FEATURES.register("conjuring_altar", () -> new ConjuringAltarFeature(NoneFeatureConfiguration.CODEC));
     public static final RegistrySupplier<Feature<NoneFeatureConfiguration>> CORRUPTION_POST = FEATURES.register("corruption_post", () -> new CorruptionPostFeature(NoneFeatureConfiguration.CODEC));
 
-    // 树
     public static final RegistrySupplier<Feature<NoneFeatureConfiguration>> TENEBRA_TREE = FEATURES.register("tenebra_tree", () -> new TenebraTreeFeature(NoneFeatureConfiguration.CODEC));
 
     public static void register() {

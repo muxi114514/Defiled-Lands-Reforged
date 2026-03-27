@@ -1,0 +1,7 @@
+{
+  "parent": "dtbop:block/smartmodel/mushroom_long",
+  "render_type": "minecraft:cutout_mipped",
+  "textures": {
+    "cap": "dtbop:block/toadstool_cap"
+  }
+}

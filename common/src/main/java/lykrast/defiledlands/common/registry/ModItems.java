@@ -16,13 +16,12 @@ import net.minecraft.world.item.*;
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(DefiledLands.MOD_ID, Registries.ITEM);
 
-    // Basic Materials
     public static final RegistrySupplier<Item> DEFILEMENT_POWDER = ITEMS.register("defilement_powder", () -> new lykrast.defiledlands.common.item.DefilementPowderItem(new Item.Properties()));
     public static final RegistrySupplier<Item> SCARLITE = ITEMS.register("scarlite", () -> new Item(new Item.Properties()));
     public static final RegistrySupplier<Item> HEPHAESTITE = ITEMS.register("hephaestite", () -> new Item(new Item.Properties()));
     public static final RegistrySupplier<Item> BLACK_HEART = ITEMS.register("black_heart", () -> new Item(new Item.Properties()));
     public static final RegistrySupplier<Item> SCUTTLER_EYE = ITEMS.register("scuttler_eye", () -> new Item(new Item.Properties()));
-    
+
     public static final RegistrySupplier<Item> UMBRIUM_INGOT = ITEMS.register("umbrium_ingot", () -> new Item(new Item.Properties()));
     public static final RegistrySupplier<Item> UMBRIUM_NUGGET = ITEMS.register("umbrium_nugget", () -> new Item(new Item.Properties()));
     public static final RegistrySupplier<Item> RAVAGING_INGOT = ITEMS.register("ravaging_ingot", () -> new Item(new Item.Properties()));
@@ -42,32 +41,27 @@ public class ModItems {
     public static final RegistrySupplier<Item> MOURNER_SPAWN_EGG = ITEMS.register("mourner_spawn_egg", () -> new dev.architectury.core.item.ArchitecturySpawnEggItem(ModEntityTypes.MOURNER, 0x51007F, 0xFF00DC, new Item.Properties()));
     public static final RegistrySupplier<Item> BOOK_WYRM_SPAWN_EGG = ITEMS.register("book_wyrm_spawn_egg", () -> new dev.architectury.core.item.ArchitecturySpawnEggItem(ModEntityTypes.BOOK_WYRM, 0x3d3042, 0x775c81, new Item.Properties()));
 
-    // Food
     public static final RegistrySupplier<Item> FOUL_CANDY = ITEMS.register("foul_candy", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).alwaysEat().build())));
     public static final RegistrySupplier<Item> BOOK_WYRM_RAW = ITEMS.register("book_wyrm_raw", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).meat().build())));
     public static final RegistrySupplier<Item> BOOK_WYRM_COOKED = ITEMS.register("book_wyrm_cooked", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).meat().build())));
 
-    // Weapons
     public static final RegistrySupplier<Item> BLASTEM_FRUIT = ITEMS.register("blastem_fruit", () -> new lykrast.defiledlands.common.item.BlastemFruitItem(new Item.Properties().stacksTo(16)));
     public static final RegistrySupplier<Item> BLASTEM_FRUIT_BLAZING = ITEMS.register("blastem_fruit_blazing", () -> new lykrast.defiledlands.common.item.BlastemFruitBlazingItem(new Item.Properties().stacksTo(16)));
 
     public static final RegistrySupplier<Item> UMBRIUM_SWORD = ITEMS.register("umbrium_sword", () -> new SwordItem(ModTiers.UMBRIUM, 3, -2.4F, new Item.Properties()));
-    public static final RegistrySupplier<Item> SCARLITE_REAVER = ITEMS.register("scarlite_reaver", () -> new lykrast.defiledlands.common.item.ScarliteReaverItem(ModTiers.SCARLITE, 6, -3.2F, new Item.Properties())); // Slow, high dmg
-    public static final RegistrySupplier<Item> SCARLITE_RAZOR = ITEMS.register("scarlite_razor", () -> new lykrast.defiledlands.common.item.ScarliteRazorItem(ModTiers.SCARLITE, 2, -1.2F, new Item.Properties())); // Fast, low dmg
+    public static final RegistrySupplier<Item> SCARLITE_REAVER = ITEMS.register("scarlite_reaver", () -> new lykrast.defiledlands.common.item.ScarliteReaverItem(ModTiers.SCARLITE, 6, -3.2F, new Item.Properties()));
+    public static final RegistrySupplier<Item> SCARLITE_RAZOR = ITEMS.register("scarlite_razor", () -> new lykrast.defiledlands.common.item.ScarliteRazorItem(ModTiers.SCARLITE, 2, -1.2F, new Item.Properties()));
 
-    // Armor (Umbrium)
     public static final RegistrySupplier<Item> UMBRIUM_HELMET = ITEMS.register("umbrium_helmet", () -> new ArmorItem(ModArmorMaterials.UMBRIUM, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistrySupplier<Item> UMBRIUM_CHESTPLATE = ITEMS.register("umbrium_chestplate", () -> new ArmorItem(ModArmorMaterials.UMBRIUM, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistrySupplier<Item> UMBRIUM_LEGGINGS = ITEMS.register("umbrium_leggings", () -> new ArmorItem(ModArmorMaterials.UMBRIUM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistrySupplier<Item> UMBRIUM_BOOTS = ITEMS.register("umbrium_boots", () -> new ArmorItem(ModArmorMaterials.UMBRIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
 
-    // Armor (Umbra)
     public static final RegistrySupplier<Item> UMBRA_HELMET = ITEMS.register("umbra_helmet", () -> new ArmorItem(ModArmorMaterials.UMBRA, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistrySupplier<Item> UMBRA_CHESTPLATE = ITEMS.register("umbra_chestplate", () -> new ArmorItem(ModArmorMaterials.UMBRA, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistrySupplier<Item> UMBRA_LEGGINGS = ITEMS.register("umbra_leggings", () -> new ArmorItem(ModArmorMaterials.UMBRA, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistrySupplier<Item> UMBRA_BOOTS = ITEMS.register("umbra_boots", () -> new ArmorItem(ModArmorMaterials.UMBRA, ArmorItem.Type.BOOTS, new Item.Properties()));
 
-    // Armor (Book Wyrm)
     public static final RegistrySupplier<Item> SCALE_HELMET = ITEMS.register("scale_helmet", () -> new ArmorItem(ModArmorMaterials.BOOK_WYRM, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistrySupplier<Item> SCALE_CHESTPLATE = ITEMS.register("scale_chestplate", () -> new ArmorItem(ModArmorMaterials.BOOK_WYRM, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistrySupplier<Item> SCALE_LEGGINGS = ITEMS.register("scale_leggings", () -> new ArmorItem(ModArmorMaterials.BOOK_WYRM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
@@ -78,8 +72,6 @@ public class ModItems {
     public static final RegistrySupplier<Item> SCALE_GOLDEN_LEGGINGS = ITEMS.register("scale_golden_leggings", () -> new ArmorItem(ModArmorMaterials.GOLDEN_BOOK_WYRM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistrySupplier<Item> SCALE_GOLDEN_BOOTS = ITEMS.register("scale_golden_boots", () -> new ArmorItem(ModArmorMaterials.GOLDEN_BOOK_WYRM, ArmorItem.Type.BOOTS, new Item.Properties()));
 
-
-    // Tools
     public static final RegistrySupplier<Item> UMBRIUM_AXE = ITEMS.register("umbrium_axe", () -> new AxeItem(ModTiers.UMBRIUM, 6.0F, -3.1F, new Item.Properties()));
     public static final RegistrySupplier<Item> UMBRIUM_PICKAXE = ITEMS.register("umbrium_pickaxe", () -> new PickaxeItem(ModTiers.UMBRIUM, 1, -2.8F, new Item.Properties()));
     public static final RegistrySupplier<Item> UMBRIUM_SHOVEL = ITEMS.register("umbrium_shovel", () -> new ShovelItem(ModTiers.UMBRIUM, 1.5F, -3.0F, new Item.Properties()));
@@ -89,13 +81,9 @@ public class ModItems {
     public static final RegistrySupplier<Item> RAVAGING_PICKAXE = ITEMS.register("ravaging_pickaxe", () -> new PickaxeItem(ModTiers.RAVAGING, 1, -2.8F, new Item.Properties()));
     public static final RegistrySupplier<Item> RAVAGING_SHOVEL = ITEMS.register("ravaging_shovel", () -> new ShovelItem(ModTiers.RAVAGING, 1.5F, -3.0F, new Item.Properties()));
 
-    // Misc
-
-    // Curios (Baubles)
     public static final RegistrySupplier<Item> SCARLITE_RING = ITEMS.register("scarlite_ring", () -> new ItemScarliteRing(new Item.Properties().stacksTo(1)));
     public static final RegistrySupplier<Item> PHYTOPROSTASIA_AMULET = ITEMS.register("phytoprostasia_amulet", () -> new ItemPhytoprostasiaAmulet(new Item.Properties().stacksTo(1)));
 
-    // Block Items
     public static final RegistrySupplier<Item> GRASS_DEFILED = ITEMS.register("grass_defiled", () -> new BlockItem(ModBlocks.GRASS_DEFILED.get(), new Item.Properties()));
     public static final RegistrySupplier<Item> GRAVEL_DEFILED = ITEMS.register("gravel_defiled", () -> new BlockItem(ModBlocks.GRAVEL_DEFILED.get(), new Item.Properties()));
     public static final RegistrySupplier<Item> SAND_DEFILED = ITEMS.register("sand_defiled", () -> new BlockItem(ModBlocks.SAND_DEFILED.get(), new Item.Properties()));
@@ -109,7 +97,7 @@ public class ModItems {
     public static final RegistrySupplier<Item> RAVAGING_STONE = ITEMS.register("ravaging_stone", () -> new BlockItem(ModBlocks.RAVAGING_STONE.get(), new Item.Properties()));
     public static final RegistrySupplier<Item> RAVAGING_BRICKS = ITEMS.register("ravaging_bricks", () -> new BlockItem(ModBlocks.RAVAGING_BRICKS.get(), new Item.Properties()));
     public static final RegistrySupplier<Item> DIRT_DEFILED = ITEMS.register("defiled_dirt", () -> new BlockItem(ModBlocks.DIRT_DEFILED.get(), new Item.Properties()));
-    
+
     public static final RegistrySupplier<Item> HEPHAESTITE_ORE = ITEMS.register("hephaestite_ore", () -> new BlockItem(ModBlocks.HEPHAESTITE_ORE.get(), new Item.Properties()));
     public static final RegistrySupplier<Item> UMBRIUM_ORE = ITEMS.register("umbrium_ore", () -> new BlockItem(ModBlocks.UMBRIUM_ORE.get(), new Item.Properties()));
     public static final RegistrySupplier<Item> SCARLITE_ORE = ITEMS.register("scarlite_ore", () -> new BlockItem(ModBlocks.SCARLITE_ORE.get(), new Item.Properties()));
@@ -130,7 +118,6 @@ public class ModItems {
     public static final RegistrySupplier<Item> CONJURING_ALTAR = ITEMS.register("conjuring_altar", () -> new BlockItem(ModBlocks.CONJURING_ALTAR.get(), new Item.Properties()));
     public static final RegistrySupplier<Item> GLASS_OBSCURE = ITEMS.register("glass_obscure", () -> new BlockItem(ModBlocks.GLASS_OBSCURE.get(), new Item.Properties()));
 
-    // Building Block Items
     public static final RegistrySupplier<Item> TENEBRA_DOOR = ITEMS.register("tenebra_door", () -> new BlockItem(ModBlocks.TENEBRA_DOOR.get(), new Item.Properties()));
     public static final RegistrySupplier<Item> STONE_DEFILED_STAIRS = ITEMS.register("stone_defiled_stairs", () -> new BlockItem(ModBlocks.STONE_DEFILED_STAIRS.get(), new Item.Properties()));
     public static final RegistrySupplier<Item> SANDSTONE_DEFILED_STAIRS = ITEMS.register("sandstone_defiled_stairs", () -> new BlockItem(ModBlocks.SANDSTONE_DEFILED_STAIRS.get(), new Item.Properties()));
@@ -141,7 +128,6 @@ public class ModItems {
     public static final RegistrySupplier<Item> STONE_BRICKS_DEFILED_SLAB = ITEMS.register("stone_defiled_bricks_slab", () -> new BlockItem(ModBlocks.STONE_BRICKS_DEFILED_SLAB.get(), new Item.Properties()));
     public static final RegistrySupplier<Item> TENEBRA_SLAB = ITEMS.register("tenebra_slab", () -> new BlockItem(ModBlocks.TENEBRA_SLAB.get(), new Item.Properties()));
 
-    // Spawn Eggs
     public static final RegistrySupplier<Item> SHAMBLER_SPAWN_EGG = ITEMS.register("shambler_spawn_egg", () -> new dev.architectury.core.item.ArchitecturySpawnEggItem(ModEntityTypes.SHAMBLER, 0x171717, 0xebebeb, new Item.Properties()));
     public static final RegistrySupplier<Item> SHAMBLER_TWISTED_SPAWN_EGG = ITEMS.register("shambler_twisted_spawn_egg", () -> new dev.architectury.core.item.ArchitecturySpawnEggItem(ModEntityTypes.SHAMBLER_TWISTED, 0x171717, 0xf62e2e, new Item.Properties()));
     public static final RegistrySupplier<Item> SCUTTLER_SPAWN_EGG = ITEMS.register("scuttler_spawn_egg", () -> new dev.architectury.core.item.ArchitecturySpawnEggItem(ModEntityTypes.SCUTTLER, 0x211823, 0xce0bff, new Item.Properties()));
@@ -152,5 +138,3 @@ public class ModItems {
         ITEMS.register();
     }
 }
-
-

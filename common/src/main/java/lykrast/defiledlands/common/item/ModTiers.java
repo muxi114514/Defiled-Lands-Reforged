@@ -7,9 +7,9 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 public enum ModTiers implements Tier {
-    UMBRIUM(2, 600, 6.0F, 2.0F, 14, () -> Ingredient.of(ModItems.SCARLITE.get())), // Iron tier roughly
-    SCARLITE(3, 1561, 8.0F, 3.0F, 10, () -> Ingredient.of(ModItems.SCARLITE.get())), // Diamond tier roughly
-    RAVAGING(3, 2048, 8.0F, 4.0F, 10, () -> Ingredient.of(ModItems.SCARLITE.get())); // Higher durability/dmg than scarlite
+    UMBRIUM(2, 600, 6.0F, 2.0F, 14, () -> Ingredient.of(ModItems.SCARLITE.get())),
+    SCARLITE(3, 1561, 8.0F, 3.0F, 10, () -> Ingredient.of(ModItems.SCARLITE.get())),
+    RAVAGING(3, 2048, 8.0F, 4.0F, 10, () -> Ingredient.of(ModItems.SCARLITE.get()));
 
     private final int level;
     private final int uses;

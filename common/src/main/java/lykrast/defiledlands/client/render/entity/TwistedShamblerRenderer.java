@@ -23,7 +23,7 @@ public class TwistedShamblerRenderer extends ShamblerRenderer<TwistedShamblerEnt
 
     @Override
     protected void setupRotations(TwistedShamblerEntity entityLiving, PoseStack matrixStack, float ageInTicks, float rotationYaw, float partialTicks) {
-        // Shambler head bobbing
+
         float spinYaw = rotationYaw + (float) (Math.cos((double) entityLiving.tickCount * 3.25D) * Math.PI * 0.75D);
         super.setupRotations(entityLiving, matrixStack, ageInTicks, spinYaw, partialTicks);
     }

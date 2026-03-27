@@ -16,7 +16,6 @@ public enum ModArmorMaterials implements ArmorMaterial {
     BOOK_WYRM("book_wyrm", 12, new int[]{2, 5, 6, 2}, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () -> Ingredient.of(ModItems.BOOK_WYRM_SCALE.get())),
     GOLDEN_BOOK_WYRM("golden_book_wyrm", 22, new int[]{3, 6, 8, 3}, 25, SoundEvents.ARMOR_EQUIP_GOLD, 1.0F, 0.0F, () -> Ingredient.of(ModItems.BOOK_WYRM_SCALE_GOLDEN.get()));
 
-
     private final String name;
     private final int durabilityMultiplier;
     private final int[] protectionAmounts;
@@ -26,7 +25,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
     private final float knockbackResistance;
     private final Supplier<Ingredient> repairIngredient;
 
-    private static final int[] BASE_DURABILITY = {13, 15, 16, 11}; // boots, leggings, chestplate, helmet typical values
+    private static final int[] BASE_DURABILITY = {13, 15, 16, 11};
 
     ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantmentValue, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
         this.name = name;

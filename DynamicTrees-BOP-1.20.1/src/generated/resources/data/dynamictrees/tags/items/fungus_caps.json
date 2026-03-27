@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "dtbop:glowshroom_seed",
+      "required": false
+    },
+    {
+      "id": "dtbop:toadstool_seed",
+      "required": false
+    }
+  ]
+}

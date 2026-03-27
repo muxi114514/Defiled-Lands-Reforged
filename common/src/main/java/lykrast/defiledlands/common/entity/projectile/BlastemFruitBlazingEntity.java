@@ -7,10 +7,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 
-/**
- * Blazing Blastem Fruit 弹射物
- * 燃烧版本，更强的爆炸和火焰效果
- */
 public class BlastemFruitBlazingEntity extends BlastemFruitEntity {
 
     public BlastemFruitBlazingEntity(EntityType<? extends BlastemFruitBlazingEntity> type, Level level) {
@@ -43,14 +39,14 @@ public class BlastemFruitBlazingEntity extends BlastemFruitEntity {
     protected void onHitEntity(EntityHitResult result) {
         super.onHitEntity(result);
         if (!this.level().isClientSide) {
-            // 点燃被击中的实体 8 秒
+
             result.getEntity().setSecondsOnFire(8);
         }
     }
 
     @Override
     protected void createExplosion(boolean isFlaming) {
-        // 燃烧版本总是产生火焰爆炸
+
         super.createExplosion(true);
     }
 }

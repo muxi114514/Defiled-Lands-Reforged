@@ -22,7 +22,7 @@ public class BookWyrmAnalyzerItem extends Item {
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity interactionTarget, InteractionHand usedHand) {
         if (interactionTarget.level().isClientSide) {
-            return InteractionResult.PASS; // Return PASS on client side for right-click on entities
+            return InteractionResult.PASS;
         }
 
         if (interactionTarget instanceof BookWyrmEntity target) {
@@ -31,11 +31,11 @@ public class BookWyrmAnalyzerItem extends Item {
             player.sendSystemMessage(Component.translatable(base + "digest_time", target.getDigestTime()));
             player.sendSystemMessage(Component.translatable(base + "max_level", target.getMaxLevel()));
             player.sendSystemMessage(Component.translatable(base + "digested", target.digested));
-            
+
             if (target.digesting > 0) {
                 player.sendSystemMessage(Component.translatable(base + "digesting", target.digesting));
             }
-            
+
             if (target.isBaby()) {
                 int minutes = (int) Math.ceil((-target.getAge()) / 1200.0D);
                 player.sendSystemMessage(Component.translatable(base + "maturing", minutes));
@@ -45,7 +45,7 @@ public class BookWyrmAnalyzerItem extends Item {
             } else {
                 player.sendSystemMessage(Component.translatable(base + "ready"));
             }
-            
+
             if (target.isGolden()) {
                 player.sendSystemMessage(Component.translatable(base + "golden"));
             }

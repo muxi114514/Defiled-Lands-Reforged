@@ -23,9 +23,7 @@ public class DefiledLands {
 
         ModCreativeTabs.register();
 
-        // 注册事件监听器
         EffectEventHandler.register();
-        // 注意：CorruptionRecipes.init() 必须在 FMLCommonSetupEvent 中调用，
-        // 此时方块已完成注册，Registry 对象可以安全访问。
+
     }
 }

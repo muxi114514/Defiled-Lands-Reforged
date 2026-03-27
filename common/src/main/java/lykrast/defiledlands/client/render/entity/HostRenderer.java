@@ -14,11 +14,10 @@ public class HostRenderer extends HumanoidMobRenderer<HostEntity, HumanoidModel<
 
     public HostRenderer(EntityRendererProvider.Context context) {
         super(context, new HumanoidModel<>(context.bakeLayer(ModelLayers.ZOMBIE)), 0.5F);
-        
-        // Armor layer
+
         this.addLayer(new HumanoidArmorLayer<>(
-                this, 
-                new HumanoidModel<>(context.bakeLayer(ModelLayers.ZOMBIE_INNER_ARMOR)), 
+                this,
+                new HumanoidModel<>(context.bakeLayer(ModelLayers.ZOMBIE_INNER_ARMOR)),
                 new HumanoidModel<>(context.bakeLayer(ModelLayers.ZOMBIE_OUTER_ARMOR)),
                 context.getModelManager()
         ));

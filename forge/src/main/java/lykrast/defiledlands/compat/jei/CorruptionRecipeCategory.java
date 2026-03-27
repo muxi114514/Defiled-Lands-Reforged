@@ -13,9 +13,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
-/**
- * JEI 污化配方分类
- */
 public class CorruptionRecipeCategory implements IRecipeCategory<CorruptionRecipe> {
 
     public static final ResourceLocation UID = new ResourceLocation(DefiledLands.MOD_ID, "corruption");
@@ -51,15 +48,13 @@ public class CorruptionRecipeCategory implements IRecipeCategory<CorruptionRecip
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, CorruptionRecipe recipe, IFocusGroup focuses) {
-        // 输入方块（左侧）
+
         builder.addSlot(RecipeIngredientRole.INPUT, 1, 19)
                 .addItemStack(new ItemStack(recipe.getInput().getBlock()));
 
-        // 催化剂：污秽粉末（中间）
         builder.addSlot(RecipeIngredientRole.CATALYST, 49, 19)
                 .addItemStack(new ItemStack(ModItems.DEFILEMENT_POWDER.get()));
 
-        // 输出方块（右侧）
         builder.addSlot(RecipeIngredientRole.OUTPUT, 95, 19)
                 .addItemStack(new ItemStack(recipe.getOutput().getBlock()));
     }

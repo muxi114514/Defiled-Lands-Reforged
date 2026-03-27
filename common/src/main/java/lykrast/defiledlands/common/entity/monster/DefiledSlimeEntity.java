@@ -26,22 +26,18 @@ public class DefiledSlimeEntity extends Slime implements IEntityDefiled {
         return Monster.createMonsterAttributes();
     }
 
-    /**
-     * Override Slime's permissive spawn rules: only spawn in darkness (light level <= 7),
-     * matching standard Monster behaviour.
-     */
     @Override
     public boolean checkSpawnRules(LevelAccessor level, MobSpawnType spawnType) {
         if (spawnType == MobSpawnType.SPAWNER) return true;
         BlockPos pos = this.blockPosition();
-        // Require low block light level (darkness), like vanilla monsters
+
         return level.getMaxLocalRawBrightness(pos) <= 7;
     }
 
     @Override
     public void setSize(int size, boolean resetHealth) {
         super.setSize(size, resetHealth);
-        // Automatically handled by super in 1.20: setting health and attack damage based on size
+
     }
 
     @Override
@@ -51,7 +47,7 @@ public class DefiledSlimeEntity extends Slime implements IEntityDefiled {
 
     @Override
     public boolean isDealsDamage() {
-        // Allows even tiny slimes to deal damage
+
         return true;
     }
 
@@ -67,7 +63,7 @@ public class DefiledSlimeEntity extends Slime implements IEntityDefiled {
 
     @Override
     protected void checkFallDamage(double y, boolean onGround, BlockState state, BlockPos pos) {
-        // Prevent fall damage tracking
+
     }
 
     @Override

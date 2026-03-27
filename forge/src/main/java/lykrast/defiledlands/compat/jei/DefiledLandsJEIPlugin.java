@@ -14,9 +14,6 @@ import net.minecraft.world.item.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * JEI 插件：显示污化配方
- */
 @JeiPlugin
 public class DefiledLandsJEIPlugin implements IModPlugin {
 
@@ -36,7 +33,7 @@ public class DefiledLandsJEIPlugin implements IModPlugin {
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
-        // 收集所有污化配方
+
         List<CorruptionRecipe> recipes = new ArrayList<>();
         CorruptionRecipes.getMap().forEach((input, output) ->
                 recipes.add(new CorruptionRecipe(input, output))
@@ -46,7 +43,7 @@ public class DefiledLandsJEIPlugin implements IModPlugin {
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-        // 注册催化剂：污秽粉末
+
         registration.addRecipeCatalyst(
                 new ItemStack(ModItems.DEFILEMENT_POWDER.get()),
                 CorruptionRecipeCategory.RECIPE_TYPE

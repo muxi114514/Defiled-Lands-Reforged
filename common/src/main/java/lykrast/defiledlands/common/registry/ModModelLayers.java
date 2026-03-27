@@ -13,5 +13,4 @@ public class ModModelLayers {
     public static final ModelLayerLocation HOST = new ModelLayerLocation(new ResourceLocation(DefiledLands.MOD_ID, "host"), "main");
     public static final ModelLayerLocation BOOK_WYRM = new ModelLayerLocation(new ResourceLocation(DefiledLands.MOD_ID, "book_wyrm"), "main");
 
-    // Defiled Slime uses the vanilla Slime model layer
 }

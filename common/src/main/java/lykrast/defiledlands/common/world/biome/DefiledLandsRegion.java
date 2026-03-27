@@ -21,8 +21,7 @@ public class DefiledLandsRegion extends Region {
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
-        // Here we can swap out existing vanilla biomes with ours based on the region weights.
-        // Desert -> Defiled Desert
+
         this.addModifiedVanillaOverworldBiomes(mapper, modifiedBiome -> {
             modifiedBiome.replaceBiome(net.minecraft.world.level.biome.Biomes.DESERT, lykrast.defiledlands.common.registry.ModBiomes.DESERT_DEFILED);
             modifiedBiome.replaceBiome(net.minecraft.world.level.biome.Biomes.PLAINS, lykrast.defiledlands.common.registry.ModBiomes.PLAINS_DEFILED);

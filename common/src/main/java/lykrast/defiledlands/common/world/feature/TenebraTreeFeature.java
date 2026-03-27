@@ -27,7 +27,7 @@ public class TenebraTreeFeature extends Feature<NoneFeatureConfiguration> {
         boolean canGrow = true;
 
         if (position.getY() >= 1 && position.getY() + height + 1 <= world.getMaxBuildHeight()) {
-            // Check space
+
             for (int j = position.getY(); j <= position.getY() + 1 + height; ++j) {
                 int k = 1;
                 if (j == position.getY()) k = 0;

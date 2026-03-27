@@ -5,6 +5,7 @@ import lykrast.defiledlands.common.registry.ModItems;
 import lykrast.defiledlands.common.util.CorruptionHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -36,17 +37,20 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Comparator;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class BookWyrmEntity extends Animal implements IEntityDefiled {
     public static final ResourceLocation LOOT = new ResourceLocation("defiledlands", "entities/bookwyrm/normal");
     public static final ResourceLocation LOOT_GOLDEN = new ResourceLocation("defiledlands", "entities/bookwyrm/golden");
-    
-    private static final EntityDataAccessor<Boolean> GOLDEN = SynchedEntityData.defineId(BookWyrmEntity.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Integer> DIGEST_TIME = SynchedEntityData.defineId(BookWyrmEntity.class, EntityDataSerializers.INT);
-    private static final EntityDataAccessor<Integer> MAX_LEVEL = SynchedEntityData.defineId(BookWyrmEntity.class, EntityDataSerializers.INT);
+
+    private static final EntityDataAccessor<Boolean> GOLDEN = SynchedEntityData.defineId(BookWyrmEntity.class,
+            EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Integer> DIGEST_TIME = SynchedEntityData.defineId(BookWyrmEntity.class,
+            EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> MAX_LEVEL = SynchedEntityData.defineId(BookWyrmEntity.class,
+            EntityDataSerializers.INT);
 
     public int digested = 0;
     public int digesting = 0;
@@ -78,7 +82,8 @@ public class BookWyrmEntity extends Animal implements IEntityDefiled {
         this.goalSelector.addGoal(2, new LeapAtTargetGoal(this, 0.4F));
         this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.2D, false));
         this.goalSelector.addGoal(4, new BreedGoal(this, 1.0D));
-        this.goalSelector.addGoal(5, new TemptGoal(this, 1.2D, Ingredient.of(Items.ENCHANTED_BOOK, ModItems.FOUL_CANDY.get()), false));
+        this.goalSelector.addGoal(5,
+                new TemptGoal(this, 1.2D, Ingredient.of(Items.ENCHANTED_BOOK, ModItems.FOUL_CANDY.get()), false));
         this.goalSelector.addGoal(6, new FollowParentGoal(this, 1.1D));
         this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 6.0F));
@@ -97,8 +102,10 @@ public class BookWyrmEntity extends Animal implements IEntityDefiled {
         super.aiStep();
 
         if (this.level().getDifficulty() == net.minecraft.world.Difficulty.PEACEFUL) {
-            if (this.getTarget() != null) this.setTarget(null);
-            if (this.getLastHurtByMob() != null) this.setLastHurtByMob(null);
+            if (this.getTarget() != null)
+                this.setTarget(null);
+            if (this.getLastHurtByMob() != null)
+                this.setLastHurtByMob(null);
         }
 
         if (digesting > 0 && digestTimer > 0) {
@@ -109,9 +116,11 @@ public class BookWyrmEntity extends Animal implements IEntityDefiled {
                 double d1 = this.random.nextGaussian() * 0.02D;
                 double d2 = this.random.nextGaussian() * 0.02D;
                 this.level().addParticle(ParticleTypes.ENCHANT,
-                        this.getX() + (double) (this.random.nextFloat() * this.getBbWidth() * 2.0F) - (double) this.getBbWidth(),
+                        this.getX() + (double) (this.random.nextFloat() * this.getBbWidth() * 2.0F)
+                                - (double) this.getBbWidth(),
                         this.getY() + 0.25D + (double) (this.random.nextFloat() * this.getBbHeight()),
-                        this.getZ() + (double) (this.random.nextFloat() * this.getBbWidth() * 2.0F) - (double) this.getBbWidth(),
+                        this.getZ() + (double) (this.random.nextFloat() * this.getBbWidth() * 2.0F)
+                                - (double) this.getBbWidth(),
                         d0, d1, d2);
             }
 
@@ -121,49 +130,45 @@ public class BookWyrmEntity extends Animal implements IEntityDefiled {
 
                 playDigestEffect(false);
 
-                if (digesting > 0) digestTimer = getDigestTime();
+                if (digesting > 0)
+                    digestTimer = getDigestTime();
             }
         }
 
         if (digested >= getMaxLevel()) {
-            if (!this.level().isClientSide && this.level() instanceof ServerLevel serverLevel) {
-                // 先尝试抽取符合过滤条件的附魔列表，最多尝试 10 次，避免消耗积累后无效产出
-                List<EnchantmentInstance> list = java.util.Collections.emptyList();
-                for (int attempt = 0; attempt < 10; attempt++) {
-                    List<EnchantmentInstance> candidate = EnchantmentHelper.selectEnchantment(this.random, new ItemStack(Items.BOOK), getMaxLevel(), isGolden());
-                    candidate.removeIf(e -> !CorruptionHelper.isWyrmEnchantAllowed(e.enchantment));
-                    if (!candidate.isEmpty()) {
-                        list = candidate;
-                        break;
-                    }
+
+            digested -= getMaxLevel();
+            this.playSound(SoundEvents.CHICKEN_EGG, 1.0F,
+                    (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+            this.playSound(SoundEvents.PLAYER_LEVELUP, 1.0F, 1.0F);
+            playDigestEffect(true);
+
+            if (!this.level().isClientSide) {
+
+                List<Enchantment> pool = new ArrayList<>();
+                for (Enchantment ench : BuiltInRegistries.ENCHANTMENT) {
+                    if (!CorruptionHelper.isWyrmEnchantAllowed(ench))
+                        continue;
+
+                    if (ench.isTreasureOnly() && !isGolden())
+                        continue;
+                    pool.add(ench);
                 }
 
-                if (!list.isEmpty()) {
-                    digested -= getMaxLevel();
-                    this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
-                    this.playSound(SoundEvents.PLAYER_LEVELUP, 1.0F, 1.0F);
-                    playDigestEffect(true);
+                if (!pool.isEmpty()) {
+                    Enchantment chosen = pool.get(this.random.nextInt(pool.size()));
 
-                    list.sort(Comparator.comparingInt((e) -> -e.enchantment.getMinCost(e.level)));
-                    int remaining = (int) (getMaxLevel() / 1.0); // 1.0 is default config conversionRate
-                    for (EnchantmentInstance e : list) {
-                        int value = (int) (e.enchantment.getMinCost(e.level) * 1.0);
-                        if (remaining >= value) {
-                            remaining -= value;
-                            ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
-                            EnchantedBookItem.addEnchantment(book, e);
-                            this.spawnAtLocation(book, 0.5F);
-
-                            if (remaining <= 0) break;
+                    int level = 1;
+                    for (int l = chosen.getMaxLevel(); l >= 1; l--) {
+                        if (chosen.getMinCost(l) <= getMaxLevel()) {
+                            level = l;
+                            break;
                         }
                     }
+                    ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
+                    EnchantedBookItem.addEnchantment(book, new EnchantmentInstance(chosen, level));
+                    this.spawnAtLocation(book, 0.5F);
                 }
-            } else if (this.level().isClientSide) {
-                // 客户端只做视觉判断，不负责实际产出
-                digested -= getMaxLevel();
-                this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
-                this.playSound(SoundEvents.PLAYER_LEVELUP, 1.0F, 1.0F);
-                playDigestEffect(true);
             }
         }
     }
@@ -175,18 +180,20 @@ public class BookWyrmEntity extends Animal implements IEntityDefiled {
         if (itemstack.getItem() == Items.ENCHANTED_BOOK && !this.isBaby()) {
             Map<Enchantment, Integer> list = EnchantmentHelper.getEnchantments(itemstack);
 
-            if (list.isEmpty()) return super.mobInteract(player, hand);
+            if (list.isEmpty())
+                return super.mobInteract(player, hand);
 
             int i = 0;
             for (Map.Entry<Enchantment, Integer> e : list.entrySet()) {
                 i += e.getKey().getMinCost(e.getValue());
             }
 
-            i = (int) (i * 1.0); // conversionRate
+            i = (int) (i * CorruptionHelper.wyrmConversionRate);
 
             if (i > 0) {
                 digesting += i;
-                if (digestTimer == 0) digestTimer = getDigestTime();
+                if (digestTimer == 0)
+                    digestTimer = getDigestTime();
 
                 if (!player.getAbilities().instabuild) {
                     itemstack.shrink(1);
@@ -212,9 +219,10 @@ public class BookWyrmEntity extends Animal implements IEntityDefiled {
 
     @Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData spawnData, @Nullable CompoundTag dataTag) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType reason,
+            @Nullable SpawnGroupData spawnData, @Nullable CompoundTag dataTag) {
         spawnData = super.finalizeSpawn(level, difficulty, reason, spawnData, dataTag);
-        
+
         setGolden(this.random.nextInt(100) == 0);
         setDigestTime(Mth.nextInt(this.random, 160, 240));
         setMaxLevel(Mth.nextInt(this.random, 3, 6));
@@ -234,18 +242,20 @@ public class BookWyrmEntity extends Animal implements IEntityDefiled {
             boolean flag1 = isGolden();
             boolean flag2 = parent.isGolden();
 
-            // 基础金色概率（金+金=10%, 金+普=4%, 普+普=1%）
             float baseChance;
-            if (flag1 && flag2) baseChance = 0.1F;
-            else if (flag1 || flag2) baseChance = 0.04F;
-            else baseChance = 0.01F;
+            if (flag1 && flag2)
+                baseChance = 0.1F;
+            else if (flag1 || flag2)
+                baseChance = 0.04F;
+            else
+                baseChance = 0.01F;
 
-            // 幸运加成：取最近8格内繁殖玩家的 Luck 属性
             float luck = 0.0F;
             Player breeder = level.getNearestPlayer(this, 8.0);
             if (breeder != null) {
                 AttributeInstance luckAttr = breeder.getAttribute(Attributes.LUCK);
-                if (luckAttr != null) luck = (float) luckAttr.getValue();
+                if (luckAttr != null)
+                    luck = (float) luckAttr.getValue();
             }
 
             float actualChance = baseChance;

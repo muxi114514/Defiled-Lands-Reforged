@@ -44,7 +44,7 @@ public class HostEntity extends Monster implements IEntityDefiled {
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 0.8D));
         this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
-        
+
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
     }
@@ -94,7 +94,7 @@ public class HostEntity extends Monster implements IEntityDefiled {
                 int k = this.slimesQueued / 2;
                 float f = ((float) (k % 2) - 0.5F) * 0.5F;
                 float f1 = ((float) (k / 2) - 0.5F) * 0.5F;
-                
+
                 DefiledSlimeEntity slime = ModEntityTypes.SLIME_DEFILED.get().create(this.level());
                 if (slime != null) {
                     if (this.isPersistenceRequired()) {

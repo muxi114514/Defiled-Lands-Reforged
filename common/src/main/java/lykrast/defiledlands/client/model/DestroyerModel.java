@@ -22,11 +22,11 @@ public class DestroyerModel<T extends DestroyerEntity> extends HumanoidModel<T> 
     @Override
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-        
+
         if (entity.isLeaping()) {
             this.rightLeg.xRot += ((float)Math.PI / 5F);
             this.leftLeg.xRot += ((float)Math.PI / 5F);
-            this.rightArm.xRot = 3.7699115F; // roughly PI + something
+            this.rightArm.xRot = 3.7699115F;
             this.leftArm.xRot = 3.7699115F;
         }
     }

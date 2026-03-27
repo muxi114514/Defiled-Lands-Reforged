@@ -116,7 +116,7 @@ public class DestroyerEntity extends Monster implements IEntityDefiled {
             this.setDeltaMovement(this.getDeltaMovement().multiply(1.0D, 0.0D, 1.0D).add(0.0D, -0.01D, 0.0D));
             this.setNoGravity(true);
             if (this.level().isClientSide) {
-                // Spawn particles here
+
             }
         } else {
             this.setNoGravity(false);
@@ -181,7 +181,7 @@ public class DestroyerEntity extends Monster implements IEntityDefiled {
     protected void tickDeath() {
         this.deathTime++;
         if (this.deathTime >= 180 && this.deathTime <= 200) {
-            // particles
+
         }
         if (!this.level().isClientSide) {
             if (this.deathTime == 1) {

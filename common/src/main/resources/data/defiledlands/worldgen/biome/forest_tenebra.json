@@ -18,14 +18,44 @@
   },
   "spawners": {
     "monster": [
-      {"type": "defiledlands:shambler", "weight": 80, "minCount": 1, "maxCount": 2},
-      {"type": "defiledlands:shambler_twisted", "weight": 80, "minCount": 1, "maxCount": 2},
-      {"type": "defiledlands:scuttler", "weight": 100, "minCount": 1, "maxCount": 3},
-      {"type": "defiledlands:host", "weight": 100, "minCount": 2, "maxCount": 3},
-      {"type": "defiledlands:slime_defiled", "weight": 40, "minCount": 1, "maxCount": 2}
+      {
+        "type": "defiledlands:shambler",
+        "weight": 80,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "defiledlands:shambler_twisted",
+        "weight": 80,
+        "minCount": 1,
+        "maxCount": 2
+      },
+      {
+        "type": "defiledlands:scuttler",
+        "weight": 100,
+        "minCount": 1,
+        "maxCount": 3
+      },
+      {
+        "type": "defiledlands:host",
+        "weight": 100,
+        "minCount": 2,
+        "maxCount": 3
+      },
+      {
+        "type": "defiledlands:slime_defiled",
+        "weight": 40,
+        "minCount": 1,
+        "maxCount": 2
+      }
     ],
     "creature": [
-      {"type": "defiledlands:book_wyrm", "weight": 16, "minCount": 2, "maxCount": 4}
+      {
+        "type": "defiledlands:book_wyrm",
+        "weight": 16,
+        "minCount": 2,
+        "maxCount": 4
+      }
     ],
     "ambient": [],
     "water_creature": [],
@@ -79,10 +109,10 @@
     [],
     [
       "minecraft:spring_water",
-      "minecraft:spring_lava",
-      "defiledlands:tenebra_tree"
+      "minecraft:spring_lava"
     ],
     [
+      "defiledlands:tenebra_tree",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_sugar_cane_badlands",
       "minecraft:patch_pumpkin",

@@ -56,7 +56,6 @@ public class BlastemBlock extends BushBlock implements BonemealableBlock {
         return SHAPE_BY_AGE[state.getValue(AGE)];
     }
 
-    // 无碰撞形状，允许实体穿入触发检测
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return Shapes.empty();
@@ -86,7 +85,6 @@ public class BlastemBlock extends BushBlock implements BonemealableBlock {
         return state.getValue(AGE) < 15;
     }
 
-    // 右键收获果实（仅成熟时有效），重置到 age 10
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (state.getValue(AGE) < 15) {
@@ -114,7 +112,6 @@ public class BlastemBlock extends BushBlock implements BonemealableBlock {
         builder.add(AGE);
     }
 
-    // BonemealableBlock
     @Override
     public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean isClient) {
         return state.getValue(AGE) < 15;

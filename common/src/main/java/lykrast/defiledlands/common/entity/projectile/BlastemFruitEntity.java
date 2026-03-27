@@ -10,12 +10,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 
-/**
- * Blastem Fruit 弹射物
- * 投掷后爆炸，造成伤害
- */
 public class BlastemFruitEntity extends ThrowableItemProjectile {
-    // 使用普通字段存储，避免 entityData 初始化顺序问题
+
     protected float damage = 7.0F;
     protected float explosionStrength = 1.0F;
     protected boolean destructive = true;
@@ -54,9 +50,6 @@ public class BlastemFruitEntity extends ThrowableItemProjectile {
         }
     }
 
-    /**
-     * 创建爆炸（仅服务端调用）
-     */
     protected void createExplosion(boolean isFlaming) {
         Level level = this.level();
         level.explode(

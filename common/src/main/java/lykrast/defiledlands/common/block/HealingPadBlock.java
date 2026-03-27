@@ -24,10 +24,6 @@ public class HealingPadBlock extends Block {
         return SHAPE;
     }
 
-    /**
-     * 每 25 tick 给予站在上面的生物再生 II 效果（持续 50 tick）
-     * 对应旧版 BlockHealingPad.onEntityWalk 的逻辑
-     */
     @Override
     public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
         if (!level.isClientSide && entity instanceof LivingEntity living && entity.tickCount % 25 == 0) {

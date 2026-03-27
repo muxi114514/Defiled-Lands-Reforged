@@ -1,0 +1,8 @@
+{
+  "parent": "dtbop:block/thick_column",
+  "textures": {
+    "bottom": "minecraft:block/mushroom_block_inside",
+    "side": "biomesoplenty:block/toadstool_block",
+    "top": "biomesoplenty:block/toadstool_block"
+  }
+}

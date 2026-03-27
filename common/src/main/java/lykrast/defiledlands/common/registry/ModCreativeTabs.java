@@ -15,14 +15,14 @@ public class ModCreativeTabs {
 
     public static final RegistrySupplier<CreativeModeTab> DEFILED_LANDS_TAB = TABS.register("defiled_lands", () ->
             CreativeTabRegistry.create(Component.translatable("itemGroup.defiledlands"),
-                    () -> new ItemStack(ModItems.SCARLITE.get()) // Use true icon
+                    () -> new ItemStack(ModItems.SCARLITE.get())
             )
     );
 
     public static void register() {
         TABS.register();
         CreativeTabRegistry.append(DEFILED_LANDS_TAB,
-            // Materials
+
             ModItems.DEFILEMENT_POWDER,
             ModItems.SCARLITE,
             ModItems.HEPHAESTITE,
@@ -43,8 +43,7 @@ public class ModCreativeTabs {
             ModItems.BLASTEM_SEED,
             ModItems.BOOK_WYRM_RAW,
             ModItems.BOOK_WYRM_COOKED,
-            
-            // Weapons & Armor
+
             ModItems.UMBRIUM_SWORD,
             ModItems.SCARLITE_REAVER,
             ModItems.SCARLITE_RAZOR,
@@ -66,8 +65,7 @@ public class ModCreativeTabs {
             ModItems.SCALE_GOLDEN_CHESTPLATE,
             ModItems.SCALE_GOLDEN_LEGGINGS,
             ModItems.SCALE_GOLDEN_BOOTS,
-            
-            // Tools
+
             ModItems.UMBRIUM_AXE,
             ModItems.UMBRIUM_PICKAXE,
             ModItems.UMBRIUM_SHOVEL,
@@ -75,13 +73,11 @@ public class ModCreativeTabs {
             ModItems.RAVAGING_AXE,
             ModItems.RAVAGING_PICKAXE,
             ModItems.RAVAGING_SHOVEL,
-            
-            // Misc
+
             ModItems.BOOK_WYRM_ANALYZER,
             ModItems.SCARLITE_RING,
             ModItems.PHYTOPROSTASIA_AMULET,
-            
-            // Blocks
+
             ModItems.GRASS_DEFILED,
             ModItems.DIRT_DEFILED,
             ModItems.GRAVEL_DEFILED,
@@ -104,8 +100,7 @@ public class ModCreativeTabs {
             ModItems.HEALING_PAD,
             ModItems.CONJURING_ALTAR,
             ModItems.GLASS_OBSCURE,
-            
-            // Nature
+
             ModItems.TENEBRA_LOG,
             ModItems.TENEBRA_PLANKS,
             ModItems.TENEBRA_LEAVES,
@@ -113,8 +108,7 @@ public class ModCreativeTabs {
             ModItems.SCURONOTTE,
             ModItems.BLASTEM,
             ModItems.VILESPINE,
-            
-            // Building Blocks
+
             ModItems.TENEBRA_DOOR,
             ModItems.STONE_DEFILED_STAIRS,
             ModItems.SANDSTONE_DEFILED_STAIRS,
@@ -124,8 +118,7 @@ public class ModCreativeTabs {
             ModItems.SANDSTONE_DEFILED_SLAB,
             ModItems.STONE_BRICKS_DEFILED_SLAB,
             ModItems.TENEBRA_SLAB,
-            
-            // Spawn Eggs
+
             ModItems.SHAMBLER_SPAWN_EGG,
             ModItems.SHAMBLER_TWISTED_SPAWN_EGG,
             ModItems.SCUTTLER_SPAWN_EGG,
@@ -137,4 +130,3 @@ public class ModCreativeTabs {
         );
     }
 }
-

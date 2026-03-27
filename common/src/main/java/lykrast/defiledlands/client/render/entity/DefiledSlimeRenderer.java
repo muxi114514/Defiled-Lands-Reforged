@@ -28,14 +28,14 @@ public class DefiledSlimeRenderer extends MobRenderer<DefiledSlimeEntity, SlimeM
     @Override
     protected void scale(DefiledSlimeEntity slime, PoseStack matrixStack, float partialTickTime) {
         float scale = 0.999F;
-        matrixStack.scale(0.999F, 0.999F, 0.999F); // Base scaling
+        matrixStack.scale(0.999F, 0.999F, 0.999F);
         matrixStack.translate(0.0F, 0.001F, 0.0F);
-        
+
         float squish = Mth.lerp(partialTickTime, slime.oSquish, slime.squish);
         float size = (float) slime.getSize();
         float f1 = squish / (size * 0.5F + 1.0F);
         float f2 = 1.0F / (f1 + 1.0F);
-        
+
         matrixStack.scale(f2 * size, 1.0F / f2 * size, f2 * size);
     }
 

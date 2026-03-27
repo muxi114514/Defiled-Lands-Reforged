@@ -62,6 +62,6 @@ public class BossSummonerItem extends Item {
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         super.appendHoverText(stack, level, tooltipComponents, isAdvanced);
-        // Note: the tooltip localization relies on LanguageProvider (defiledlands.boss_summon.tooltip or something)
+
     }
 }

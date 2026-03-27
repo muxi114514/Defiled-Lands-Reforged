@@ -116,7 +116,7 @@ public class MournerEntity extends Monster implements IEntityDefiled {
 
     public void setCurrentAttack(int value) {
         int i = this.entityData.get(MOURNER_FLAGS);
-        i &= 0x3; // keep charging and firing flags
+        i &= 0x3;
         i |= (value << 2);
         this.entityData.set(MOURNER_FLAGS, (byte) i);
     }
@@ -228,7 +228,7 @@ public class MournerEntity extends Monster implements IEntityDefiled {
         double d2 = this.getZ();
         this.setPos(x, y, z);
         boolean flag = false;
-        
+
         if (this.level().noCollision(this)) {
             flag = true;
         }
@@ -407,7 +407,7 @@ public class MournerEntity extends Monster implements IEntityDefiled {
                         largefireball.setPos(mourner.getX(), mourner.getY() + (double)mourner.getBbHeight() + 0.5D, mourner.getZ());
                         level.addFreshEntity(largefireball);
                         level.levelEvent(null, 1016, mourner.blockPosition(), 0);
-                        attackStep = 0; // Large fireball is one-shot for current step
+                        attackStep = 0;
                         break;
                 }
             }

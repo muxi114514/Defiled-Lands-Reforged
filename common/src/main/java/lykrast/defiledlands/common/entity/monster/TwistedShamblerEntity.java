@@ -28,8 +28,7 @@ public class TwistedShamblerEntity extends ShamblerEntity {
     @Override
     protected void registerGoals() {
         super.registerGoals();
-        // Replace previous nearest attackable target goal with one that has
-        // mustSee=false
+
         this.targetSelector.removeAllGoals(goal -> goal instanceof NearestAttackableTargetGoal);
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, false));
     }

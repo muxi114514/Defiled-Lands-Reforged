@@ -21,8 +21,7 @@ public class DefiledLandsSurfaceRuleData {
 
     public static SurfaceRules.RuleSource makeRules() {
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
-        
-        // Standard Defiled Grass & Dirt surface
+
         SurfaceRules.RuleSource defiledSurface = SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
                         SurfaceRules.sequence(
@@ -34,14 +33,12 @@ public class DefiledLandsSurfaceRuleData {
                 SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(0), 0), STONE_DEFILED)
         );
 
-        // Defiled Desert Surface
         SurfaceRules.RuleSource defiledDesertSurface = SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SAND_DEFILED),
                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SAND_DEFILED),
                 SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(0), 0), SANDSTONE_DEFILED)
         );
 
-        // Hills Surface
         SurfaceRules.RuleSource defiledHillsSurface = SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
                         SurfaceRules.sequence(
@@ -54,7 +51,6 @@ public class DefiledLandsSurfaceRuleData {
                 SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(0), 0), STONE_DEFILED)
         );
 
-        // Swamp Surface - similar to normal but can have different logic if needed
         SurfaceRules.RuleSource defiledSwampSurface = defiledSurface;
 
         return SurfaceRules.sequence(

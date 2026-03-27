@@ -7,10 +7,6 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
-/**
- * 污秽方块基类
- * 对应旧版 BlockCorrupted，在 randomTick 中向周围扩散污化。
- */
 public class DefiledBlock extends Block {
 
     public DefiledBlock(Properties properties) {
