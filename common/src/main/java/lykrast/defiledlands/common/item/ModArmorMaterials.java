@@ -11,10 +11,12 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    UMBRIUM("umbrium", 16, new int[]{2, 5, 6, 2}, 14, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> Ingredient.of(ModItems.UMBRIUM_INGOT.get())),
-    UMBRA("umbra", 15, new int[]{2, 5, 6, 2}, 9, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> Ingredient.of(ModItems.SCARLITE.get())),
-    BOOK_WYRM("book_wyrm", 12, new int[]{2, 5, 6, 2}, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F, () -> Ingredient.of(ModItems.BOOK_WYRM_SCALE.get())),
-    GOLDEN_BOOK_WYRM("golden_book_wyrm", 22, new int[]{3, 6, 8, 3}, 25, SoundEvents.ARMOR_EQUIP_GOLD, 1.0F, 0.0F, () -> Ingredient.of(ModItems.BOOK_WYRM_SCALE_GOLDEN.get()));
+    UMBRIUM("umbrium", 16, new int[] { 2, 5, 6, 2 }, 14, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F,
+            () -> Ingredient.of(ModItems.UMBRIUM_INGOT.get())),
+    BOOK_WYRM("book_wyrm_scale", 12, new int[] { 2, 5, 6, 2 }, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 0.0F, 0.0F,
+            () -> Ingredient.of(ModItems.BOOK_WYRM_SCALE.get())),
+    GOLDEN_BOOK_WYRM("book_wyrm_scale_golden", 22, new int[] { 3, 6, 8, 3 }, 25, SoundEvents.ARMOR_EQUIP_GOLD, 1.0F,
+            0.0F, () -> Ingredient.of(ModItems.BOOK_WYRM_SCALE_GOLDEN.get()));
 
     private final String name;
     private final int durabilityMultiplier;
@@ -25,9 +27,10 @@ public enum ModArmorMaterials implements ArmorMaterial {
     private final float knockbackResistance;
     private final Supplier<Ingredient> repairIngredient;
 
-    private static final int[] BASE_DURABILITY = {13, 15, 16, 11};
+    private static final int[] BASE_DURABILITY = { 13, 15, 16, 11 };
 
-    ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantmentValue, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
+    ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantmentValue,
+            SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.protectionAmounts = protectionAmounts;
@@ -61,20 +64,32 @@ public enum ModArmorMaterials implements ArmorMaterial {
     }
 
     @Override
-    public int getEnchantmentValue() { return this.enchantmentValue; }
+    public int getEnchantmentValue() {
+        return this.enchantmentValue;
+    }
 
     @Override
-    public SoundEvent getEquipSound() { return this.equipSound; }
+    public SoundEvent getEquipSound() {
+        return this.equipSound;
+    }
 
     @Override
-    public Ingredient getRepairIngredient() { return this.repairIngredient.get(); }
+    public Ingredient getRepairIngredient() {
+        return this.repairIngredient.get();
+    }
 
     @Override
-    public String getName() { return DefiledLands.MOD_ID + ":" + this.name; }
+    public String getName() {
+        return DefiledLands.MOD_ID + ":" + this.name;
+    }
 
     @Override
-    public float getToughness() { return this.toughness; }
+    public float getToughness() {
+        return this.toughness;
+    }
 
     @Override
-    public float getKnockbackResistance() { return this.knockbackResistance; }
+    public float getKnockbackResistance() {
+        return this.knockbackResistance;
+    }
 }
