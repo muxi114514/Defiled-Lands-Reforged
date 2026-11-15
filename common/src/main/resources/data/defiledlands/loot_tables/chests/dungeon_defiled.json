@@ -128,21 +128,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "defiledlands:umbra_blaster",
-          "weight": 4,
-          "functions": [
-            {
-              "function": "enchant_with_levels",
-              "treasure": true,
-              "levels": {
-                "min": 5,
-                "max": 20
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
           "name": "defiledlands:concussion_smasher",
           "weight": 2,
           "functions": [
